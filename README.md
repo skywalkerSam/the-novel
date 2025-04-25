@@ -4,7 +4,7 @@ pretty much.
 
 ## TODOs
 
-- [ ] initial UI, and deployment w/ Vercel.  
+- [ ] initial UI & deployment w/ Vercel.  
 
 ## What's next? How do I make an app with this?
 
