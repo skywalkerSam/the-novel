@@ -1,10 +1,11 @@
-# The Novel
+# [The Novel](https://novel.skywalkersam.dev/)
 
-pretty much.
+Pretty much.
 
 ## TODOs
 
-- [ ] initial UI & deployment w/ Vercel.  
+- [X] Initial UI & deployment w/ Vercel
+- [ ] Auth w/ Clerk  
 
 ## What's next? How do I make an app with this?
 
