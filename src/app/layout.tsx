@@ -5,6 +5,7 @@ import { Paprika } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ThemeProvider } from "~/components/ui/theme-provider";
 import Footer from "./_components/footer";
+import { ClerkProvider } from "@clerk/nextjs";
 
 // https://nextjs.org/learn/dashboard-app/adding-metadata
 export const metadata: Metadata = {
@@ -27,19 +28,21 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${paprika.className} antialiased`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <main>{children}</main>
-          <Footer></Footer>
-        </ThemeProvider>
-        <SpeedInsights></SpeedInsights>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en" suppressHydrationWarning>
+        <body className={`${paprika.className} antialiased`}>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <main>{children}</main>
+            <Footer></Footer>
+          </ThemeProvider>
+          <SpeedInsights></SpeedInsights>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
