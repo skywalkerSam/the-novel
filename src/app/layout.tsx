@@ -5,7 +5,14 @@ import { Paprika } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ThemeProvider } from "~/components/ui/theme-provider";
 import Footer from "./_components/footer";
-import { ClerkProvider } from "@clerk/nextjs";
+import {
+  ClerkProvider,
+  SignedIn,
+  SignInButton,
+  SignedOut,
+  UserButton,
+} from "@clerk/nextjs";
+import NavigationMenubar from "./_components/navigation-menubar";
 
 // https://nextjs.org/learn/dashboard-app/adding-metadata
 export const metadata: Metadata = {
@@ -37,6 +44,17 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
+            <header className="flex h-16 items-center justify-end gap-4 p-4">
+              <SignedOut>
+                <div className="font-bold hover:cursor-pointer hover:border-1 hover:rounded-md hover:border-b-sky-400 p-2">
+                  <SignInButton />
+                </div>
+                {/* <SignUpButton /> */}
+              </SignedOut>
+              <SignedIn>
+                <NavigationMenubar></NavigationMenubar>
+              </SignedIn>
+            </header>
             <main>{children}</main>
             <Footer></Footer>
           </ThemeProvider>
