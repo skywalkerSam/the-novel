@@ -10,7 +10,6 @@ import {
   SignedIn,
   SignInButton,
   SignedOut,
-  UserButton,
 } from "@clerk/nextjs";
 import NavigationMenubar from "./_components/navigation-menubar";
 
@@ -46,10 +45,9 @@ export default function RootLayout({
           >
             <header className="flex h-16 items-center justify-end gap-4 p-4">
               <SignedOut>
-                <div className="font-bold hover:cursor-pointer hover:border-1 hover:rounded-md hover:border-b-sky-400 p-2">
+                <div className="p-2 font-bold hover:cursor-pointer hover:rounded-md hover:border-1 hover:border-b-sky-400">
                   <SignInButton />
                 </div>
-                {/* <SignUpButton /> */}
               </SignedOut>
               <SignedIn>
                 <NavigationMenubar></NavigationMenubar>
