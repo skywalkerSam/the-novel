@@ -1,11 +1,23 @@
-# [The Novel](https://novel.skywalkersam.dev/)
+<div align="center">
+    <a href="https://skywalkerSam.dev">
+        <img src="https://github.com/starboy-inc.png" alt="Starboy Logo" height=128>
+    </a>
+    <h1><a href="https://novel.skywalkersam.dev">The Novel</a></h1>
+    <h2>A Platform For Everything Poetic...</h2>
+    <p>Built w/ <a href="https://nextjs.org">Next.js</a> + <a href="https://vercel.com">Vercel</a>.</p>
+    
+</div>
 
-Pretty much.
+## Domains
+
+- [novel.skywalkersam.dev](https://novel.skywalkersam.dev)
+- [the-novel.vercel.app](https://the-novel.vercel.app)
 
 ## TODOs
 
 - [X] Initial UI & deployment w/ Vercel
-- [ ] Auth w/ Clerk  
+- [X] Auth w/ Clerk
+- [ ] Moving to NextAuth
 
 ## What's next? How do I make an app with this?
 
