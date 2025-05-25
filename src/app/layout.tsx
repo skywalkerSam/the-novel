@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     template: "%s",
     default: "The Novel",
   },
-  description: "The Novel Platform",
+  description: "A Platform For Everything Poetic...",
   metadataBase: new URL("https://novel.skywalkersam.dev/"),
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
