@@ -21,7 +21,7 @@
 
 - [x] Landing Page & deployment w/ Vercel
 - [x] Auth w/ Clerk
-- Scaffold Basic UI []
+- Scaffold Basic UI
 
 &nbsp;
 
