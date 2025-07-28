@@ -13,7 +13,11 @@
 - [novel.skywalkerSam.dev](https://novel.skywalkersam.dev)
 - [the-novel.vercel.app](https://the-novel.vercel.app)
 
-<!-- ## Sources -->
+&nbsp;
+
+## Sources
+
+- Next.js introduction - [YouTube](https://www.youtube.com/watch?v=Zq5fmkH0T78)
 
 &nbsp;
 
