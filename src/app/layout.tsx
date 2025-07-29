@@ -4,14 +4,14 @@ import { type Metadata } from "next";
 import { Paprika } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ThemeProvider } from "~/components/ui/theme-provider";
-import Footer from "./_components/footer";
+import Footer from "./_components/Footer";
 import {
   ClerkProvider,
   SignedIn,
   SignInButton,
   SignedOut,
 } from "@clerk/nextjs";
-import NavigationMenubar from "./_components/navigation-menubar";
+import NavigationMenubar from "./_components/NavBar";
 
 // https://nextjs.org/learn/dashboard-app/adding-metadata
 export const metadata: Metadata = {
