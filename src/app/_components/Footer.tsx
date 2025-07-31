@@ -1,6 +1,6 @@
 "use client";
 
-import NextLogo from "~/app/_components/next-logo";
+import NextLogo from "~/app/_components/NextLogo";
 import { ModeToggle } from "~/components/ui/theme-toggle";
 
 export default function Footer() {
@@ -18,8 +18,8 @@ export default function Footer() {
           <p className="text-xs">
             &copy; 12025,{" "}
             <a
-              href="https://github.com/skywalkerSam/"
-              className="hover:text-sky-400"
+              href="https://github.com/skywalkerSam"
+              className="hover:text-green-900"
               target="_blank"
               rel="noopener noreferrer"
             >

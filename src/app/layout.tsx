@@ -4,14 +4,14 @@ import { type Metadata } from "next";
 import { Paprika } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ThemeProvider } from "~/components/ui/theme-provider";
-import Footer from "./_components/footer";
+import Footer from "./_components/Footer";
 import {
   ClerkProvider,
   SignedIn,
   SignInButton,
   SignedOut,
 } from "@clerk/nextjs";
-import NavigationMenubar from "./_components/navigation-menubar";
+import NavBar from "./_components/NavBar";
 
 // https://nextjs.org/learn/dashboard-app/adding-metadata
 export const metadata: Metadata = {
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     template: "%s",
     default: "The Novel",
   },
-  description: "A Platform For Everything Poetic...",
+  description: "The Novel Platform.",
   metadataBase: new URL("https://novel.skywalkersam.dev/"),
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
@@ -39,18 +39,18 @@ export default function RootLayout({
         <body className={`${paprika.className} antialiased`}>
           <ThemeProvider
             attribute="class"
-            defaultTheme="light"
+            defaultTheme="dark"
             enableSystem
             disableTransitionOnChange
           >
             <header className="flex h-16 items-center justify-end gap-4 p-4">
               <SignedOut>
-                <div className="p-2 hover:cursor-pointer hover:rounded-md hover:border-2 hover:border-b-sky-400">
+                <div className="py-2 px-4 font-extrabold text-lg text-[var(--green)] hover:text-green-900 hover:rounded-md hover:border-2 hover:border-b-[var(--green)]">
                   <SignInButton />
                 </div>
               </SignedOut>
               <SignedIn>
-                <NavigationMenubar></NavigationMenubar>
+                <NavBar></NavBar>
               </SignedIn>
             </header>
             <main>{children}</main>
