@@ -18,8 +18,8 @@ export default function Footer() {
           <p className="text-xs">
             &copy; 12025,{" "}
             <a
-              href="https://twitter.com/skywalkerSam_/"
-              className="hover:text-sky-400"
+              href="https://github.com/skywalkerSam"
+              className="hover:text-green-900"
               target="_blank"
               rel="noopener noreferrer"
             >
