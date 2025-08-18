@@ -22,14 +22,30 @@
 
 &nbsp;
 
-## ToDo
+## TODO
 
-- [x] Landing Page & deployment w/ Vercel
-- [x] Auth w/ Clerk
+- [x] Landing Page & deployment w/ *Vercel*
+
+- [x] Basic Auth w/ *Clerk*
 
 - Scaffold Basic UI
     - [X] Hero
-    - [] Search
+    - Search
+    - Feed
+
+- CMS integration w/ *Sanity*
+    - Schema
+        - Type Safely w/ *zod*
+    - Feed hydration
+    - Search hydration
+    - Write client
+    - User auth & profile
+
+- Bugs & Analytics
+    - Sentry integration
+    - PostHog integration
+
+- & 3, 2, 1... We have a liftoff 🚀🎉🎉
 
 &nbsp;
 
