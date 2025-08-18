@@ -18,14 +18,34 @@
 ## Sources
 
 - Next.js introduction - [YouTube](https://www.youtube.com/watch?v=Zq5fmkH0T78)
+- NavBar - [Flowbite](https://flowbite.com/docs/components/navbar/#user-menu-dropdown)
 
 &nbsp;
 
-## ToDo
+## TODO
 
-- [x] Landing Page & deployment w/ Vercel
-- [x] Auth w/ Clerk
+- [x] Landing Page & deployment w/ *Vercel*
+
+- [x] Basic Auth w/ *Clerk*
+
 - Scaffold Basic UI
+    - [X] Hero
+    - Search
+    - Feed
+
+- CMS integration w/ *Sanity*
+    - Schema
+        - Type Safely w/ *zod*
+    - Feed hydration
+    - Search hydration
+    - Write client
+    - User auth & profile
+
+- Bugs & Analytics
+    - Sentry integration
+    - PostHog integration
+
+- & 3, 2, 1... We have a liftoff 🚀🎉🎉
 
 &nbsp;
 
