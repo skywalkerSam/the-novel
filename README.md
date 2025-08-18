@@ -18,6 +18,7 @@
 ## Sources
 
 - Next.js introduction - [YouTube](https://www.youtube.com/watch?v=Zq5fmkH0T78)
+- NavBar - [Flowbite](https://flowbite.com/docs/components/navbar/#user-menu-dropdown)
 
 &nbsp;
 
@@ -25,7 +26,10 @@
 
 - [x] Landing Page & deployment w/ Vercel
 - [x] Auth w/ Clerk
+
 - Scaffold Basic UI
+    - [X] Hero
+    - [] Search
 
 &nbsp;
 
