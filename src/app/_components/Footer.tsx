@@ -19,7 +19,7 @@ export default function Footer() {
             &copy; 12025,{" "}
             <a
               href="https://github.com/skywalkerSam"
-              className="hover:text-green-900"
+              className="hover:text-green-950"
               target="_blank"
               rel="noopener noreferrer"
             >

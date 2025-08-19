@@ -143,7 +143,7 @@
   }
 
   .text-30-extrabold {
-    @apply text-[30px] font-extrabold text-white;
+    @apply text-[30px] font-extrabold text-green-950;
   }
 
   .text-30-bold {
@@ -171,7 +171,7 @@
   }
 
   .text-14-normal {
-    @apply text-sm font-normal text-white;
+    @apply text-sm font-normal text-green-950;
   }
 
   .pink_container {
@@ -183,11 +183,11 @@
   }
 
   .heading {
-    @apply my-5 max-w-5xl bg-transparent px-6 py-3 text-center text-[36px] leading-[46px] font-extrabold text-white uppercase sm:text-[54px] sm:leading-[64px];
+    @apply my-5 max-w-5xl bg-transparent px-6 py-3 text-center text-[36px] leading-[46px] font-extrabold text-green-950 uppercase sm:text-[54px] sm:leading-[64px];
   }
 
   .sub-heading {
-    @apply max-w-2xl text-center text-[20px] font-medium break-words text-white;
+    @apply max-w-2xl text-center text-[20px] font-medium break-words text-green-950;
   }
 
   .section_container {
@@ -247,7 +247,7 @@
 
   /* searchform */
   .search-form {
-    @apply mt-8 flex min-h-[80px] w-full max-w-3xl flex-row items-center gap-5 rounded-[80px] border-[5px] border-[var(--green)] bg-transparent px-5 text-xl font-light;
+    @apply flex min-h-[60px] w-full max-w-3xl flex-row items-center gap-5 rounded-4xl border-[2px] border-green-950 bg-transparent px-5 text-lg font-light text-[var(--green)];
   }
 
   .search-input {
@@ -255,7 +255,7 @@
   }
 
   .search-btn {
-    @apply flex size-[45px] items-center justify-center rounded-full bg-[var(--green)] hover:bg-green-950;
+    @apply flex size-[45px] items-center justify-center rounded-full bg-transparent hover:bg-[var(--green)];
   }
 
   /* startupcard */
@@ -276,7 +276,7 @@
   }
 
   .startup-card_btn {
-    @apply rounded-full bg-transparent px-5 py-3 text-[16px] font-medium text-white;
+    @apply rounded-full bg-transparent px-5 py-3 text-[16px] font-medium text-green-950;
   }
 
   .startup-card_skeleton {
