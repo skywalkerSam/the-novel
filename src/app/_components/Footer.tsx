@@ -16,7 +16,8 @@ export default function Footer() {
             <NextLogo></NextLogo>
           </div>
           <p className="text-xs">
-            &copy; 12025,{" "}
+            {/* &copy; 12025,{" "} */}
+            &copy; {new Date().getFullYear() + 10000},{" "}
             <a
               href="https://github.com/skywalkerSam"
               className="hover:text-green-950"

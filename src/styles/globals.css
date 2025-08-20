@@ -247,7 +247,7 @@
 
   /* searchform */
   .search-form {
-    @apply flex min-h-[60px] w-full max-w-3xl flex-row items-center gap-5 rounded-4xl border-[2px] border-green-950 bg-transparent px-5 text-lg font-light text-[var(--green)];
+    @apply flex min-h-[60px] w-full max-w-3xl flex-row items-center gap-5 rounded-full border-[2px] border-green-950 bg-transparent px-5 text-lg font-light text-[var(--green)];
   }
 
   .search-input {

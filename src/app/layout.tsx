@@ -39,13 +39,13 @@ export default function RootLayout({
         <body className={`${paprika.className} antialiased`}>
           <ThemeProvider
             attribute="class"
-            defaultTheme="dark"
+            defaultTheme="system"
             enableSystem
             disableTransitionOnChange
           >
             <header className="flex h-16 items-center justify-end gap-4 p-4">
               <SignedOut>
-                <div className="px-4 py-2 text-lg font-extrabold text-green-950 hover:rounded-md hover:border-2 hover:border-b-green-950 hover:text-[var(--green)]">
+                <div className="px-4 py-2 text-lg font-extrabold text-[var(--green)] hover:rounded-full hover:border-2 hover:border-b-[var(--green)] hover:text-[var(--green)]">
                   <SignInButton />
                 </div>
               </SignedOut>
