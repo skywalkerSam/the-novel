@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+// import Link from "next/link";
 import { X } from "lucide-react";
 import { useRouter } from "next/navigation";
 
@@ -22,9 +22,14 @@ export default function SearchFormReset() {
 
   return (
     <button type="reset" onClick={reset}>
+      {/* reset() handles this with useRouter()
       <Link href="/search" className="search-btn text-green-950">
         <X className="size-6" />
-      </Link>
+      </Link> 
+      */}
+      <div className="search-btn text-green-950">
+        <X className="size-6" />
+      </div>
     </button>
   );
 }
