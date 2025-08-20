@@ -45,7 +45,7 @@ export default function RootLayout({
           >
             <header className="flex h-16 items-center justify-end gap-4 p-4">
               <SignedOut>
-                <div className="px-4 py-2 text-lg font-extrabold text-green-950 hover:rounded-md hover:border-2 hover:border-b-green-950 hover:text-[var(--green)]">
+                <div className="py-2 px-4 font-extrabold text-lg text-[var(--green)] hover:text-green-900 hover:rounded-md hover:border-2 hover:border-b-[var(--green)]">
                   <SignInButton />
                 </div>
               </SignedOut>

@@ -5,7 +5,7 @@ import { ModeToggle } from "~/components/ui/theme-toggle";
 
 export default function Footer() {
   return (
-    <div className="flex flex-row items-center justify-center justify-items-end py-12 text-[var(--green)]">
+    <div className="flex flex-row items-center justify-center justify-items-end py-12">
       <div className="mr-2">
         <ModeToggle></ModeToggle>
       </div>
@@ -19,7 +19,7 @@ export default function Footer() {
             &copy; 12025,{" "}
             <a
               href="https://github.com/skywalkerSam"
-              className="hover:text-green-950"
+              className="hover:text-green-900"
               target="_blank"
               rel="noopener noreferrer"
             >
