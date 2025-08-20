@@ -1,10 +1,16 @@
 import SearchForm from "./_components/SearchForm";
 
-export default function Search() {
+export default async function Search({
+  searchParams,
+}: {
+  searchParams: Promise<{ query?: string }>;
+}) {
+  const query = (await searchParams).query;
+  //   const params = { search: query || null };
   return (
     <>
       <div className="mt-10">
-        <SearchForm></SearchForm>
+        <SearchForm query={query}></SearchForm>
       </div>
     </>
   );
