@@ -2,12 +2,22 @@
 
 import Link from "next/link";
 import { X } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 export default function SearchFormReset() {
-  const reset = () => {
-    const form = document.querySelector(".search-form")!;
+  const router = useRouter();
 
-    if (form instanceof HTMLFormElement) form.reset();
+  //   const reset = () => {
+  //     const form = document.querySelector(".search-form")!;
+
+  //     if (form instanceof HTMLFormElement) form.reset();
+  //   };
+
+  const reset = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const form = e.currentTarget.form;
+    form?.reset();
+    // Navigate to clear ?query=... from the URL
+    router.push("/search");
   };
 
   return (
