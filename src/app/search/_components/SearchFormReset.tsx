@@ -17,7 +17,7 @@ export default function SearchFormReset() {
     const form = e.currentTarget.form;
     form?.reset();
     // Navigate to clear ?query=... from the URL
-    router.push("/search");
+    router.push("/search", {scroll: false});
   };
 
   return (
