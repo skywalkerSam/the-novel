@@ -3,21 +3,21 @@ import Link from "next/link";
 
 export default function NavBar() {
   return (
-    <nav className="w-screen bg-transparent text-[var(--green)]">
+    <nav className="w-screen bg-transparent text-green-950">
       {" "}
       <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
-        <a
-          href="https://github.com/skywalkersam/the-novel"
+        <Link
+          href="/"
           className="flex items-center space-x-3 rtl:space-x-reverse"
-          target="_blank"
-          rel="noopener noreferrer"
+          // target="_blank"
+          // rel="noopener noreferrer"
         >
           <img src="/starboy.svg" className="h-8" alt="Starboy Logo" />
-          <span className="self-center text-2xl font-semibold whitespace-nowrap hover:text-green-900">
+          <span className="self-center text-2xl font-semibold whitespace-nowrap hover:text-[var(--green)]">
             {" "}
             The Novel
           </span>
-        </a>
+        </Link>
         <div className="flex items-center space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse">
           <UserButton></UserButton>
         </div>
@@ -29,7 +29,7 @@ export default function NavBar() {
             <li>
               <Link
                 href="/"
-                className="block rounded-sm px-3 py-2 hover:text-green-900 md:bg-transparent md:p-0"
+                className="block rounded-sm px-3 py-2 hover:text-[var(--green)] md:bg-transparent md:p-0"
                 aria-current="page"
               >
                 Home
@@ -38,15 +38,15 @@ export default function NavBar() {
             <li>
               <Link
                 href="#"
-                className="block rounded-sm px-3 py-2 hover:text-green-900 md:p-0"
+                className="block rounded-sm px-3 py-2 hover:text-[var(--green)] md:p-0"
               >
                 Community
               </Link>
             </li>
             <li>
               <Link
-                href="#"
-                className="block rounded-sm px-3 py-2 hover:text-green-900 md:p-0"
+                href="/search"
+                className="block rounded-sm px-3 py-2 hover:text-[var(--green)] md:p-0"
               >
                 Search
               </Link>
