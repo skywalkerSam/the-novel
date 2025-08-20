@@ -143,7 +143,7 @@
   }
 
   .text-30-extrabold {
-    @apply text-[30px] font-extrabold text-white;
+    @apply text-[30px] font-extrabold text-green-950;
   }
 
   .text-30-bold {
@@ -171,7 +171,7 @@
   }
 
   .text-14-normal {
-    @apply text-sm font-normal text-white;
+    @apply text-sm font-normal text-green-950;
   }
 
   .pink_container {
@@ -183,11 +183,11 @@
   }
 
   .heading {
-    @apply my-5 max-w-5xl bg-black px-6 py-3 text-center text-[36px] leading-[46px] font-extrabold text-white uppercase sm:text-[54px] sm:leading-[64px];
+    @apply my-5 max-w-5xl bg-transparent px-6 py-3 text-center text-[36px] leading-[46px] font-extrabold text-green-950 uppercase sm:text-[54px] sm:leading-[64px];
   }
 
   .sub-heading {
-    @apply max-w-2xl text-center text-[20px] font-medium break-words text-white;
+    @apply max-w-2xl text-center text-[20px] font-medium break-words text-green-950;
   }
 
   .section_container {
@@ -212,15 +212,15 @@
   }
 
   .profile_card {
-    @apply bg-primary relative z-0 flex h-fit w-80 flex-col items-center justify-center rounded-[30px] border-[5px] border-black px-6 pt-20 pb-6 max-lg:w-full;
+    @apply bg-primary relative z-0 flex h-fit w-80 flex-col items-center justify-center rounded-[30px] border-[5px] border-[var(--green)] px-6 pt-20 pb-6 max-lg:w-full;
   }
 
   .profile_title {
-    @apply absolute -top-9 w-11/12 rounded-[20px] border-[5px] border-black bg-white px-5 py-3 before:absolute before:-bottom-1 before:left-0 before:-z-[1] before:h-[60px] before:w-full before:-skew-y-6 before:rounded-[20px] before:bg-black before:content-[''] after:absolute after:-top-1 after:right-0 after:-z-[1] after:h-[60px] after:w-full after:-skew-y-6 after:rounded-[20px] after:bg-black after:content-[''];
+    @apply absolute -top-9 w-11/12 rounded-[20px] border-[5px] border-[var(--green)] bg-transparent px-5 py-3 before:absolute before:-bottom-1 before:left-0 before:-z-[1] before:h-[60px] before:w-full before:-skew-y-6 before:rounded-[20px] before:bg-transparent before:content-[''] after:absolute after:-top-1 after:right-0 after:-z-[1] after:h-[60px] after:w-full after:-skew-y-6 after:rounded-[20px] after:bg-transparent after:content-[''];
   }
 
   .profile_image {
-    @apply rounded-full border-[3px] border-black object-cover;
+    @apply rounded-full border-[3px] border-[var(--green)] object-cover;
   }
 
   /* idea details */
@@ -238,16 +238,16 @@
   }
 
   .dropdown-menu {
-    @apply w-56 rounded-2xl border-[5px] border-black bg-white p-5;
+    @apply w-56 rounded-2xl border-[5px] border-[var(--green)] bg-transparent p-5;
   }
 
   .login {
-    @apply relative border-[5px] border-black bg-white py-4 font-medium text-black transition-all duration-500 hover:shadow-none;
+    @apply relative border-[5px] border-[var(--green)] bg-transparent py-4 font-medium text-black transition-all duration-500 hover:shadow-none;
   }
 
   /* searchform */
   .search-form {
-    @apply mt-8 flex min-h-[80px] w-full max-w-3xl flex-row items-center gap-5 rounded-[80px] border-[5px] border-black bg-white px-5 text-[24px];
+    @apply flex min-h-[60px] w-full max-w-3xl flex-row items-center gap-5 rounded-4xl border-[2px] border-green-950 bg-transparent px-5 text-lg font-light text-[var(--green)];
   }
 
   .search-input {
@@ -255,12 +255,12 @@
   }
 
   .search-btn {
-    @apply flex size-[50px] items-center justify-center rounded-full bg-black;
+    @apply flex size-[45px] items-center justify-center rounded-full bg-transparent hover:bg-[var(--green)];
   }
 
   /* startupcard */
   .startup-card {
-    @apply hover:border-primary rounded-[22px] border-[5px] border-black bg-white px-5 py-6 transition-all duration-500;
+    @apply hover:border-primary rounded-[22px] border-[5px] border-[var(--green)] bg-transparent px-5 py-6 transition-all duration-500;
   }
 
   .startup-card_date {
@@ -276,7 +276,7 @@
   }
 
   .startup-card_btn {
-    @apply rounded-full bg-black px-5 py-3 text-[16px] font-medium text-white;
+    @apply rounded-full bg-transparent px-5 py-3 text-[16px] font-medium text-green-950;
   }
 
   .startup-card_skeleton {
@@ -285,7 +285,7 @@
 
   /* startupform */
   .startup-form {
-    @apply mx-auto my-10 max-w-2xl space-y-8 bg-white px-6;
+    @apply mx-auto my-10 max-w-2xl space-y-8 bg-transparent px-6;
   }
 
   .startup-form_label {
@@ -293,11 +293,11 @@
   }
 
   .startup-form_input {
-    @apply mt-3 rounded-full border-[3px] border-black px-5 py-7 text-[18px] font-semibold text-black placeholder:text-black;
+    @apply mt-3 rounded-full border-[3px] border-[var(--green)] px-5 py-7 text-[18px] font-semibold text-black placeholder:text-black;
   }
 
   .startup-form_textarea {
-    @apply mt-3 rounded-[20px] border-[3px] border-black p-5 text-[18px] font-semibold text-black placeholder:text-black;
+    @apply mt-3 rounded-[20px] border-[3px] border-[var(--green)] p-5 text-[18px] font-semibold text-black placeholder:text-black;
   }
 
   .startup-form_error {
@@ -305,11 +305,11 @@
   }
 
   .startup-form_editor {
-    @apply mt-3 border-[3px] border-black text-[18px] font-semibold text-black placeholder:text-black;
+    @apply mt-3 border-[3px] border-[var(--green)] text-[18px] font-semibold text-black placeholder:text-black;
   }
 
   .startup-form_btn {
-    @apply bg-primary min-h-[70px] w-full rounded-full border-[4px] border-black p-5 text-[18px] font-bold;
+    @apply bg-primary min-h-[70px] w-full rounded-full border-[4px] border-[var(--green)] p-5 text-[18px] font-bold;
   }
 
   /* view */
