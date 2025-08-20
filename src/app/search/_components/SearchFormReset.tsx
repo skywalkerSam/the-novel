@@ -21,15 +21,19 @@ export default function SearchFormReset() {
   };
 
   return (
-    <button type="reset" onClick={reset}>
-      {/* reset() handles this with useRouter()
+    <button
+      type="button"
+      onClick={reset}
+      className="search-btn text-green-950"
+      aria-label="Reset search parameters"
+    >
+      {/* reset() handles the path revalidation
       <Link href="/search" className="search-btn text-green-950">
         <X className="size-6" />
       </Link> 
       */}
-      <div className="search-btn text-green-950">
-        <X className="size-6" />
-      </div>
+
+      <X className="size-6" />
     </button>
   );
 }
