@@ -16,10 +16,13 @@ export default async function SearchPage({
   const query = Array.isArray(raw) ? raw[0] : raw;
 
   return (
-    <>
+    <div className="text-green-100">
       <div className="mt-10">
         <SearchForm query={query}></SearchForm>
       </div>
-    </>
+      <div className="mt-10 mb-10">
+        {query ? `Search results for "${query}"` : ""}
+      </div>
+    </div>
   );
 }
