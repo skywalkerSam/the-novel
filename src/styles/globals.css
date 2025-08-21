@@ -143,7 +143,7 @@
   }
 
   .text-30-extrabold {
-    @apply text-[30px] font-extrabold text-green-950;
+    @apply text-[30px] font-extrabold text-green-100;
   }
 
   .text-30-bold {
@@ -171,7 +171,7 @@
   }
 
   .text-14-normal {
-    @apply text-sm font-normal text-green-950;
+    @apply text-sm font-normal text-green-100;
   }
 
   .pink_container {
@@ -183,11 +183,11 @@
   }
 
   .heading {
-    @apply my-5 max-w-5xl bg-transparent px-6 py-3 text-center text-[36px] leading-[46px] font-extrabold text-green-950 uppercase sm:text-[54px] sm:leading-[64px];
+    @apply my-5 max-w-5xl bg-transparent px-6 py-3 text-center text-[36px] leading-[46px] font-extrabold text-green-100 uppercase sm:text-[54px] sm:leading-[64px];
   }
 
   .sub-heading {
-    @apply max-w-2xl text-center text-[20px] font-medium break-words text-green-950;
+    @apply max-w-2xl text-center text-[20px] font-medium break-words text-green-100;
   }
 
   .section_container {
@@ -247,7 +247,7 @@
 
   /* searchform */
   .search-form {
-    @apply flex min-h-[60px] w-full max-w-3xl flex-row items-center gap-5 rounded-full border-[2px] border-green-950 bg-transparent px-5 text-lg font-light text-[var(--green)];
+    @apply flex min-h-[60px] w-full max-w-3xl flex-row items-center gap-5 rounded-full border-[2px] border-black bg-transparent px-5 text-lg font-light text-primary;
   }
 
   .search-input {
@@ -255,20 +255,20 @@
   }
 
   .search-btn {
-    @apply flex size-[45px] items-center justify-center rounded-full bg-transparent hover:bg-[var(--green)];
+    @apply flex size-[45px] items-center justify-center rounded-full bg-[var(--green)] hover:bg-primary text-black;
   }
 
   /* startupcard */
   .startup-card {
-    @apply hover:border-primary rounded-[22px] border-[5px] border-[var(--green)] bg-transparent px-5 py-6 transition-all duration-500;
+    @apply border-[var(--green)] hover:border-primary rounded-4xl border-[2px] bg-transparent px-5 py-6 transition-all duration-500;
   }
 
   .startup-card_date {
-    @apply rounded-full px-4 py-2 text-[16px] font-medium;
+    @apply rounded-full px-4 py-2 text-[16px] text-black font-medium;
   }
 
   .startup-card_desc {
-    @apply my-3 line-clamp-2 text-[16px] font-normal break-all;
+    @apply my-3 line-clamp-2 text-[16px] font-normal break-all text-black;
   }
 
   .startup-card_img {
@@ -276,7 +276,7 @@
   }
 
   .startup-card_btn {
-    @apply rounded-full bg-transparent px-5 py-3 text-[16px] font-medium text-green-950;
+    @apply rounded-full bg-transparent px-5 py-3 text-[16px] font-medium text-black;
   }
 
   .startup-card_skeleton {

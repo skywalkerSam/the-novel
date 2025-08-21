@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function NavBar() {
   return (
-    <nav className="w-screen bg-transparent text-green-950">
+    <nav className="w-screen bg-transparent">
       {" "}
       <div className="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4">
         <Link
@@ -12,8 +12,8 @@ export default function NavBar() {
           // target="_blank"
           // rel="noopener noreferrer"
         >
-          <img src="/starboy.svg" className="h-8" alt="Starboy Logo" />
-          <span className="self-center text-2xl font-semibold whitespace-nowrap hover:text-[var(--green)]">
+          {/* <img src="/starboy.svg" className="h-8" alt="Starboy Logo" /> */}
+          <span className="hover:text-primary self-center text-2xl font-semibold whitespace-nowrap">
             {" "}
             The Novel
           </span>
@@ -28,8 +28,8 @@ export default function NavBar() {
           <ul className="mt-4 flex flex-col rounded-lg p-4 font-medium md:mt-0 md:flex-row md:space-x-8 md:border-0 md:p-0 rtl:space-x-reverse">
             <li>
               <Link
-                href="/"
-                className="block rounded-sm px-3 py-2 hover:text-[var(--green)] md:bg-transparent md:p-0"
+                href="/feed"
+                className="hover:text-primary block rounded-sm px-3 py-2 md:bg-transparent md:p-0"
                 aria-current="page"
               >
                 Home
@@ -38,7 +38,7 @@ export default function NavBar() {
             <li>
               <Link
                 href="#"
-                className="block rounded-sm px-3 py-2 hover:text-[var(--green)] md:p-0"
+                className="hover:text-primary block rounded-sm px-3 py-2 md:p-0"
               >
                 Community
               </Link>
@@ -46,7 +46,7 @@ export default function NavBar() {
             <li>
               <Link
                 href="/search"
-                className="block rounded-sm px-3 py-2 hover:text-[var(--green)] md:p-0"
+                className="hover:text-primary block rounded-sm px-3 py-2 md:p-0"
               >
                 Search
               </Link>
