@@ -2,7 +2,7 @@
     <a href="https://skywalkerSam.dev">
         <img src="https://github.com/starboy-inc.png" alt="Starboy Logo" height=128>
     </a>
-    <h1><a href="https://novel.skywalkersam.dev">The Novel</a></h1>        
+    <h1><a href="https://novel.skywalkersam.dev">The Novel Platform</a></h1>        
     A Platform for Everything Poetic...
 </div>
 
