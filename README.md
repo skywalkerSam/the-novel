@@ -31,7 +31,7 @@
 - Scaffold Basic UI
     - [X] Hero
     - [X] Search
-    - Feed
+    - [X] Feed
 
 - CMS integration w/ *Sanity*
     - Schema

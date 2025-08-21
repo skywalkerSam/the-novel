@@ -9,7 +9,7 @@ export default function UserFeed() {
       _id: 1,
       _createdAt: "2025.08.21",
       views: 69,
-      author: { _id: 1 },
+      author: { _id: 1, name: "Starboy" },
       description: "Who tf knows...",
       image:
         "https://images.unsplash.com/photo-1619491202102-088c4afb271c?ixid=M3w4ODczOHwwfDF8Y29sbGVjdGlvbnw4OHxiSERoNEFlN084b3x8fHx8Mnx8MTc0Mjk3ODk5MHw&ixlib",

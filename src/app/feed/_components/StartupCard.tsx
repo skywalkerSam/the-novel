@@ -32,11 +32,11 @@ const StartupCard = ({ post }: { post: StartupTypeCard }) => {
 
       <div className="flex-between mt-5 gap-5">
         <div className="flex-1">
-          <Link href={`/user/${author?._id}`}>
+          {/* <Link href={`/user/${author?._id}`}>
             <p className="text-16-medium line-clamp-1">{author?.name}</p>
-          </Link>
+          </Link> */}
           <Link href={`/startup/${_id}`}>
-            <h3 className="text-26-semibold">{title}</h3> {/* line-clamp-1 */}
+            <h3 className="text-26-semibold text-primary">{title}</h3> {/* line-clamp-1 */}
           </Link>
         </div>
         <Link href={`/user/${author?._id}`}>
