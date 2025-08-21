@@ -6,6 +6,18 @@ import "./src/env.js";
 
 /** @type {import("next").NextConfig} */
 const config = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'unsplash.com',
+        port: '',
+        pathname: '',
+        search: '',
+      },
+    ],
+  },
+
   // Skipping type safety until Sanity integration
   typescript: { ignoreBuildErrors: true },
   eslint: { ignoreDuringBuilds: true },
