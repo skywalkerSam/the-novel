@@ -6,14 +6,15 @@ import "./src/env.js";
 
 /** @type {import("next").NextConfig} */
 const config = {
+  // middleware: ["~/src/middleware.ts"],
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'unsplash.com',
-        port: '',
-        pathname: '',
-        search: '',
+        protocol: "https",
+        hostname: "unsplash.com",
+        port: "",
+        pathname: "",
+        search: "",
       },
     ],
   },
