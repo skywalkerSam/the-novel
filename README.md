@@ -33,7 +33,7 @@
     - [X] Search
     - [X] Feed
 
-- []CMS integration w/ *Sanity*
+- CMS integration w/ *Sanity*
     - Schema
         - Type Safely w/ *zod*
     - Feed hydration
