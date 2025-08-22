@@ -28,12 +28,12 @@
 
 - [x] Basic Auth w/ *Clerk*
 
-- Scaffold Basic UI
+- [X] Scaffold Basic UI
     - [X] Hero
     - [X] Search
     - [X] Feed
 
-- CMS integration w/ *Sanity*
+- []CMS integration w/ *Sanity*
     - Schema
         - Type Safely w/ *zod*
     - Feed hydration
