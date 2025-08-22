@@ -20,6 +20,8 @@
     "@radix-ui/react-dropdown-menu": "^2.1.12",
     "@radix-ui/react-navigation-menu": "^1.2.13",
     "@radix-ui/react-slot": "^1.2.0",
+    "@sanity/image-url": "1",
+    "@sanity/vision": "4",
     "@t3-oss/env-nextjs": "^0.12.0",
     "@vercel/speed-insights": "^1.2.0",
     "class-variance-authority": "^0.7.1",
@@ -27,9 +29,12 @@
     "clsx": "^2.1.1",
     "lucide-react": "^0.487.0",
     "next": "^15.2.3",
+    "next-sanity": "10",
     "next-themes": "^0.4.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "sanity": "4",
+    "styled-components": "6",
     "tailwind-merge": "^3.1.0",
     "zod": "^3.24.2"
   },
@@ -52,7 +57,7 @@
   "ct3aMetadata": {
     "initVersion": "7.39.3"
   },
-  "packageManager": "pnpm@9.15.4",
+  "packageManager": "pnpm@10.15.0",
   "overrides": {
     "react": "$react",
     "react-dom": "$react-dom"
