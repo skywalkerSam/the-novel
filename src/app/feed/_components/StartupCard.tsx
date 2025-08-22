@@ -36,17 +36,20 @@ const StartupCard = ({ post }: { post: StartupTypeCard }) => {
             <p className="text-16-medium line-clamp-1">{author?.name}</p>
           </Link> */}
           <Link href={`/startup/${_id}`}>
-            <h3 className="text-26-semibold text-primary">{title}</h3> {/* line-clamp-1 */}
+            <h3 className="text-26-semibold text-primary">{title}</h3>{" "}
+            {/* line-clamp-1 */}
           </Link>
         </div>
-        <Link href={`/user/${author?._id}`}>
-          <Image
-            src={author?.image!}
-            alt={author?.name!}
-            width={48}
-            height={48}
-            className="rounded-full"
-          />
+        <Link href={`/user/${(author as any)._id}`}>
+          {(author as any)?.image && (author as any)?.name && (
+            <Image
+              src={(author as any).image}
+              alt={(author as any).name}
+              width={48}
+              height={48}
+              className="rounded-full"
+            />
+          )}
         </Link>
       </div>
 
