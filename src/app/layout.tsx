@@ -35,7 +35,6 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <header className="flex h-16 items-center justify-end gap-4 p-4"></header>
           <main>{children}</main>
           <Footer></Footer>
         </ThemeProvider>

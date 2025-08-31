@@ -128,7 +128,8 @@
     @apply bg-background text-foreground;
   }
   :root {
-    --radius: 0.5rem;
+    /* --radius: 0.5rem; */
+    overflow-x: hidden;
   }
 }
 
