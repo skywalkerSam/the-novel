@@ -14,7 +14,7 @@ export default function UserFeed() {
       image:
         "https://images.unsplash.com/photo-1619491202102-088c4afb271c?ixid=M3w4ODczOHwwfDF8Y29sbGVjdGlvbnw4OHxiSERoNEFlN084b3x8fHx8Mnx8MTc0Mjk3ODk5MHw&ixlib",
       category: "Existence",
-      title: "The inevitable Void of Nothingness",
+      title: "The inevitable Void of Absolute Nothingness",
     },
   ];
   return (
