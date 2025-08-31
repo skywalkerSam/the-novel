@@ -4,14 +4,15 @@ import { type Metadata } from "next";
 import { Paprika } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ThemeProvider } from "~/components/ui/theme-provider";
-import Footer from "./_components/Footer";
-import {
-  ClerkProvider,
-  SignedIn,
-  SignInButton,
-  SignedOut,
-} from "@clerk/nextjs";
-import NavBar from "./_components/NavBar";
+import Footer from "~/components/Footer";
+// import {
+//   ClerkProvider,
+//   SignedIn,
+//   SignInButton,
+//   SignedOut,
+// } from "@clerk/nextjs";
+
+// import NavBar from "./_components/NavBar";
 
 // https://nextjs.org/learn/dashboard-app/adding-metadata
 export const metadata: Metadata = {
@@ -34,31 +35,31 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <ClerkProvider>
-      <html lang="en" suppressHydrationWarning>
-        <body className={`${paprika.className} antialiased`}>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <header className="flex h-16 items-center justify-end gap-4 p-4">
-              <SignedOut>
+    // <ClerkProvider>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${paprika.className} antialiased`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <header className="flex h-16 items-center justify-end gap-4 p-4">
+            {/* <SignedOut>
                 <div className="px-4 py-2 hover:rounded-full hover:text-primary">
                   <SignInButton />
                 </div>
               </SignedOut>
               <SignedIn>
                 <NavBar></NavBar>
-              </SignedIn>
-            </header>
-            <main>{children}</main>
-            <Footer></Footer>
-          </ThemeProvider>
-          <SpeedInsights></SpeedInsights>
-        </body>
-      </html>
-    </ClerkProvider>
+              </SignedIn> */}
+          </header>
+          <main>{children}</main>
+          <Footer></Footer>
+        </ThemeProvider>
+        <SpeedInsights></SpeedInsights>
+      </body>
+    </html>
+    // </ClerkProvider>
   );
 }
