@@ -7,6 +7,9 @@ import { ThemeProvider } from "~/components/ui/theme-provider";
 import Footer from "~/components/Footer";
 // import NavBar from "~/components/NavBar";
 
+// sanity-plugin-markdown
+// import "easymde/dist/easymde.min.css";
+
 // https://nextjs.org/learn/dashboard-app/adding-metadata
 export const metadata: Metadata = {
   title: {
