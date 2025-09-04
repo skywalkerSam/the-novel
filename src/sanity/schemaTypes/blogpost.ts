@@ -6,15 +6,15 @@ export const blogpost = defineType({
   type: "document",
   fields: [
     defineField({
+      name: "title",
+      type: "string",
+    }),
+    defineField({
       name: "slug",
       type: "slug",
       options: {
         source: "title",
       },
-    }),
-    defineField({
-      name: "title",
-      type: "string",
     }),
     defineField({
       name: "description",
@@ -32,13 +32,13 @@ export const blogpost = defineType({
     defineField({
       name: "image",
       type: "url",
-      validation: (Rule) => Rule.required(),
+      // validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "category",
       type: "string",
-      validation: (Rule) =>
-        Rule.min(1).max(20).required().error("Please enter a category"),
+      // validation: (Rule) =>
+      //   Rule.min(1).max(20).required().error("Please enter a category"),
     }),
     defineField({
       name: "views",
