@@ -6,6 +6,11 @@ export const blogpost = defineType({
   type: "document",
   fields: [
     defineField({
+      name: "author",
+      type: "reference",
+      to: { type: "author" },
+    }),
+    defineField({
       name: "title",
       type: "string",
     }),
@@ -21,18 +26,13 @@ export const blogpost = defineType({
       type: "text",
     }),
     defineField({
-      name: "author",
-      type: "reference",
-      to: { type: "author" },
+      name: "image",
+      type: "url",
+      // validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "content",
       type: "markdown",
-    }),
-    defineField({
-      name: "image",
-      type: "url",
-      // validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "category",
