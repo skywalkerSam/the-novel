@@ -1,18 +1,18 @@
-import type { Author, Startup } from "~/sanity/types";
+// import type { Author, Startup } from "sanity.types.ts";
 import { sanityFetch } from "~/sanity/lib/live";
 import { BLOGPOSTS_QUERY } from "~/sanity/lib/queries";
-import StartupCard, { type BlogpostTypeCardDef } from "./_components/StartupCard";
-import type BlogpostTypeCardDef from "./_components/StartupCard";
+import BlogpostCard, {
+  type BlogpostCardType,
+} from "./_components/BlogpostCard";
 import { client } from "~/sanity/lib/client";
 
-// export type BlogpostTypeCardDef = Omit<Startup, "author"> & { author?: Author };
+// export type BlogpostCardType = Omit<Startup, "author"> & { author?: Author };
 
 export default async function UserFeed() {
-  const posts: BlogpostTypeCardDef = await client.fetch(BLOGPOSTS_QUERY);
-
-  console.log(JSON.stringify(posts, null, 2))
-
+  const posts: BlogpostCardType = await client.fetch(BLOGPOSTS_QUERY);
   // const posts = await sanityFetch({ query: BLOGPOSTS_QUERY });
+
+  console.log(JSON.stringify(posts, null, 2));
 
   // const posts = [
   //   {
@@ -32,8 +32,8 @@ export default async function UserFeed() {
       <section className="section_container">
         <ul className="card_grid mt-7">
           {posts?.length > 0 ? (
-            posts.map((post: typeof BlogpostTypeCardDef) => (
-              <StartupCard key={post?._id} post={post} />
+            posts.map((post: BlogpostCardType) => (
+              <BlogpostCard key={post?._id} post={post} />
             ))
           ) : (
             <p className="no-results text-3xl text-red-400/60">

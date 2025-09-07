@@ -1,7 +1,7 @@
 import { defineQuery } from "next-sanity";
 
 export const BLOGPOSTS_QUERY =
-  defineQuery(`*[_type == "blogpost" && defined(slug.current)] | order(_createdAt desc) {
+  defineQuery(`*[_type == "blogpost"] | order(_createdAt desc) {
   _id, 
   title, 
   slug,

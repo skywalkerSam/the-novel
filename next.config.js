@@ -23,6 +23,13 @@ const config = {
         pathname: "",
         search: "",
       },
+      {
+        protocol: "https",
+        hostname: "images-assets.nasa.gov",
+        port: "",
+        pathname: "",
+        search: "",
+      },
     ],
   },
 

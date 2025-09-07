@@ -259,28 +259,28 @@
     @apply flex size-[45px] items-center justify-center rounded-full bg-[var(--green)] hover:bg-primary text-black;
   }
 
-  /* startupcard */
-  .startup-card {
+  /* BlogpostCard */
+  .blogpost-card {
     @apply border-[var(--green)] hover:border-primary rounded-4xl border-[2px] bg-transparent px-5 py-6 transition-all duration-500;
   }
 
-  .startup-card_date {
+  .blogpost-card_date {
     @apply rounded-full px-4 py-2 text-[16px] text-black font-medium;
   }
 
-  .startup-card_desc {
+  .blogpost-card_desc {
     @apply my-3 line-clamp-2 text-[16px] font-normal break-all text-black;
   }
 
-  .startup-card_img {
+  .blogpost-card_img {
     @apply h-[164px] w-full rounded-[10px] object-cover;
   }
 
-  .startup-card_btn {
+  .blogpost-card_btn {
     @apply rounded-full bg-transparent px-5 py-3 text-[16px] font-medium text-black;
   }
 
-  .startup-card_skeleton {
+  .blogpost-card_skeleton {
     @apply h-96 w-full rounded-[22px] bg-zinc-400;
   }
 

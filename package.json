@@ -13,7 +13,10 @@
     "lint:fix": "next lint --fix",
     "preview": "next build && next start",
     "start": "next start",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "predev": "npm run typegen",
+    "prebuild": "npm run typegen",
+    "typegen": "sanity schema extract --enforce-required-fields && sanity typegen generate"
   },
   "dependencies": {
     "@clerk/nextjs": "^6.18.0",

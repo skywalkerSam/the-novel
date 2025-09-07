@@ -3,12 +3,14 @@ import { EyeIcon } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "~/components/ui/button";
-import type { Author, Startup } from "~/sanity/types";
-import { Skeleton } from "./skeleton";
+import type { Author, Blogpost } from "sanity.types.ts";
+import { Skeleton } from "./Skeleton";
 
-export type BlogpostTypeCardDef = Omit<Startup, "author"> & { author?: Author };
+export type BlogpostCardType = Omit<Blogpost, "author"> & {
+  author?: Author;
+};
 
-const StartupCard = ({ post }: { post: BlogpostTypeCardDef }) => {
+const BlogpostCard = ({ post }: { post: BlogpostCardType }) => {
   const {
     _createdAt,
     views,
@@ -20,9 +22,8 @@ const StartupCard = ({ post }: { post: BlogpostTypeCardDef }) => {
     description,
   } = post;
 
-
   return (
-    <li className="startup-card group">
+    <li className="blogpost-card group">
       <div className="flex-between">
         <p className="startup_card_date text-black">{formatDate(_createdAt)}</p>
         <div className="flex gap-1.5">
@@ -41,45 +42,43 @@ const StartupCard = ({ post }: { post: BlogpostTypeCardDef }) => {
             {/* line-clamp-1 */}
           </Link>
         </div>
-        <Link href={`/user/${author?._id}`}>
-          {author?.image | author?.name && (
-            <Image
-              src={author?.image}
-              alt={author?.name}
-              width={48}
-              height={48}
-              className="rounded-full"
-            />
-          )}
+        <Link href={`/author/${author?._id}`}>
+          <img
+            src={author?.image ?? "https://github.com/starboy-inc.png"}
+            alt={author?.name ?? "Author"}
+            width={48}
+            height={48}
+            className="rounded-full"
+          />
         </Link>
       </div>
 
-      <Link href={`/startup/${_id}`}>
-        <p className="startup-card_desc">{description}</p>
+      <Link href={`/blogpost/${_id}`}>
+        <p className="blogpost-card_desc">{description}</p>
 
-        <img src={image} alt="Cover image" className="startup-card_img" />
+        <img src={image ?? "https://github.com/starboy-inc.png"} alt="Cover image" className="blogpost-card_img" />
       </Link>
 
       <div className="flex-between mt-5 gap-3">
         <Link href={`/?query=${category?.toLowerCase()}`}>
           <p className="text-16-medium">{category}</p>
         </Link>
-        <Button className="startup-card_btn" asChild>
-          <Link href={`/startup/${_id}`}>Details</Link>
+        <Button className="blogpost-card_btn" asChild>
+          <Link href={`/blogpost/${_id}`}>Details</Link>
         </Button>
       </div>
     </li>
   );
 };
 
-export const StartupCardSkeleton = () => (
+export const BlogpostCardSkeleton = () => (
   <>
     {[0, 1, 2, 3, 4].map((index: number) => (
       <li key={cn("skeleton", index)}>
-        <Skeleton className="startup-card_skeleton" />
+        <Skeleton className="blogpost-card_skeleton" />
       </li>
     ))}
   </>
 );
 
-export default StartupCard;
+export default BlogpostCard;
