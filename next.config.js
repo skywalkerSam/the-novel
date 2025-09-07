@@ -16,6 +16,13 @@ const config = {
         pathname: "",
         search: "",
       },
+      {
+        protocol: "https",
+        hostname: "github.com",
+        port: "",
+        pathname: "",
+        search: "",
+      },
     ],
   },
 

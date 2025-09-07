@@ -3,12 +3,12 @@ import { EyeIcon } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "~/components/ui/button";
-import type { Author, Startup } from "@/sanity/types";
+import type { Author, Startup } from "~/sanity/types";
 import { Skeleton } from "./skeleton";
 
-export type StartupTypeCard = Omit<Startup, "author"> & { author?: Author };
+export type BlogpostTypeCardDef = Omit<Startup, "author"> & { author?: Author };
 
-const StartupCard = ({ post }: { post: StartupTypeCard }) => {
+const StartupCard = ({ post }: { post: BlogpostTypeCardDef }) => {
   const {
     _createdAt,
     views,
@@ -41,11 +41,11 @@ const StartupCard = ({ post }: { post: StartupTypeCard }) => {
             {/* line-clamp-1 */}
           </Link>
         </div>
-        <Link href={`/user/${(author as any)._id}`}>
-          {(author as any)?.image && (author as any)?.name && (
+        <Link href={`/user/${author?._id}`}>
+          {author?.image | author?.name && (
             <Image
-              src={(author as any).image}
-              alt={(author as any).name}
+              src={author?.image}
+              alt={author?.name}
               width={48}
               height={48}
               className="rounded-full"
@@ -57,7 +57,7 @@ const StartupCard = ({ post }: { post: StartupTypeCard }) => {
       <Link href={`/startup/${_id}`}>
         <p className="startup-card_desc">{description}</p>
 
-        <img src={image} alt="placeholder" className="startup-card_img" />
+        <img src={image} alt="Cover image" className="startup-card_img" />
       </Link>
 
       <div className="flex-between mt-5 gap-3">

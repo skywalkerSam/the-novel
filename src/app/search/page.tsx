@@ -15,8 +15,10 @@ export default async function SearchPage({
   const raw = (await searchParams)?.query;
   const query = Array.isArray(raw) ? raw[0] : raw;
 
+  // const { data: posts } = await sanityFetch({ query: BLOGPOSTS_QUERY, params });
+
   return (
-    <div >
+    <div>
       <div className="mt-10">
         <SearchForm query={query}></SearchForm>
       </div>
