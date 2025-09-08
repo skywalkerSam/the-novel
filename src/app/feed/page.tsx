@@ -9,7 +9,8 @@ import { client } from "~/sanity/lib/client";
 // export type BlogpostCardType = Omit<Startup, "author"> & { author?: Author };
 
 export default async function UserFeed() {
-  const posts: BlogpostCardType = await client.fetch(BLOGPOSTS_QUERY);
+
+  const posts: BlogpostCardType[] = await client.fetch(BLOGPOSTS_QUERY);
   // const posts = await sanityFetch({ query: BLOGPOSTS_QUERY });
 
   console.log(JSON.stringify(posts, null, 2));

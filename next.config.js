@@ -34,8 +34,8 @@ const config = {
   },
 
   // Skipping type check until complete Sanity integration
-  typescript: { ignoreBuildErrors: true },
-  eslint: { ignoreDuringBuilds: true },
+  // typescript: { ignoreBuildErrors: true },
+  // eslint: { ignoreDuringBuilds: true },
 };
 
 export default config;
