@@ -23,6 +23,7 @@
     "@radix-ui/react-dropdown-menu": "^2.1.12",
     "@radix-ui/react-navigation-menu": "^1.2.13",
     "@radix-ui/react-slot": "^1.2.0",
+    "@sanity/client": "^7.11.0",
     "@sanity/image-url": "1",
     "@sanity/vision": "4",
     "@t3-oss/env-nextjs": "^0.12.0",
