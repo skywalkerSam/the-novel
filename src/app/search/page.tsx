@@ -1,4 +1,7 @@
 import SearchForm from "./_components/SearchForm";
+import { sanityFetch, SanityLive } from "~/sanity/lib/live";
+import { SEARCH_QUERY } from "~/sanity/lib/queries";
+import BlogpostCard from "../feed/_components/BlogpostCard";
 
 // export default async function Search({
 //   searchParams,
@@ -12,19 +15,40 @@ export default async function SearchPage({
 }: {
   searchParams: Promise<{ query?: string | string[] }>;
 }) {
-  const raw = (await searchParams)?.query;
-  const query = Array.isArray(raw) ? raw[0] : raw;
+  const query = (await searchParams)?.query;
+  const params = { search: query ?? null };
+  const searchQuery = Array.isArray(query) ? query[0] : query;
+  // const searchQuery = query?.[0] ?? query;
 
-  // const { data: posts } = await sanityFetch({ query: BLOGPOSTS_QUERY, params });
+  const { data: posts } = await sanityFetch({ query: SEARCH_QUERY, params });
 
   return (
     <div>
-      <div className="mt-10">
-        <SearchForm query={query}></SearchForm>
+      <div className="mt-10 flex items-center justify-center">
+        <SearchForm query={searchQuery}></SearchForm>
       </div>
-      <div className="mt-10 mb-10">
-        {query ? `Search results for "${query}"` : ""}
-      </div>
+      <section className="section_container">
+        <div className="mt-10 mb-10">
+          {query
+            ? Array.isArray(query)
+              ? `Search results for "${query.join(", ")}"`
+              : `Search results for "${query}"`
+            : ""}
+          {/* {query ? `Search results for "${query}"` : ""} */}
+        </div>
+        <ul className="card_grid mt-7">
+          {posts?.length > 0 ? (
+            posts.map((post) => (
+              <BlogpostCard key={post?._id} post={post} />
+            ))
+          ) : (
+            <p className="no-results text-3xl text-red-400/60">
+              no blogposts found .(
+            </p>
+          )}
+        </ul>
+      </section>
+      <SanityLive></SanityLive>
     </div>
   );
 }

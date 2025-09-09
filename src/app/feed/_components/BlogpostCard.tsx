@@ -10,6 +10,7 @@ export type BlogpostCardType = Omit<Blogpost, "author"> & {
   author?: Author;
 };
 
+// const BlogpostCard = ({ post }: { post: Partial<Blogpost> }) => {
 const BlogpostCard = ({ post }: { post: BlogpostCardType }) => {
   const {
     _createdAt,
@@ -56,7 +57,11 @@ const BlogpostCard = ({ post }: { post: BlogpostCardType }) => {
       <Link href={`/blogpost/${_id}`}>
         <p className="blogpost-card_desc">{description}</p>
 
-        <img src={image ?? "https://github.com/starboy-inc.png"} alt="Cover image" className="blogpost-card_img" />
+        <img
+          src={image ?? "https://github.com/starboy-inc.png"}
+          alt="Cover image"
+          className="blogpost-card_img"
+        />
       </Link>
 
       <div className="flex-between mt-5 gap-3">
