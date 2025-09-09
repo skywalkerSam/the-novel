@@ -2,7 +2,7 @@
     <a href="https://skywalkerSam.dev">
         <img src="https://github.com/starboy-inc.png" alt="Starboy Logo" height=128>
     </a>
-    <h1><a href="https://novel.skywalkersam.dev">The Novel</a></h1>        
+    <h1><a href="https://novel.skywalkersam.dev">The Novel Platform</a></h1>        
     A Platform for Everything Poetic...
 </div>
 
@@ -19,31 +19,36 @@
 
 - Next.js introduction - [YouTube](https://www.youtube.com/watch?v=Zq5fmkH0T78)
 - NavBar - [Flowbite](https://flowbite.com/docs/components/navbar/#user-menu-dropdown)
+- Sanity Docs - [typegen](https://www.sanity.io/docs/apis-and-sdks/sanity-typegen)
 
 &nbsp;
 
 ## TODO
 
-- [x] Landing Page & deployment w/ *Vercel*
+- [x] Landing Page & deployment w/ _Vercel_
 
-- [x] Basic Auth w/ *Clerk*
+- [x] Basic Auth w/ _Clerk_
 
-- Scaffold Basic UI
-    - [X] Hero
-    - [X] Search
-    - Feed
+- [x] Scaffold Basic UI
 
-- CMS integration w/ *Sanity*
-    - Schema
-        - Type Safely w/ *zod*
-    - Feed hydration
-    - Search hydration
-    - Write client
-    - User auth & profile
+  - [x] Hero
+  - [x] Search
+  - [x] Feed
+
+- CMS integration w/ _Sanity_
+
+  - [x]Schema
+    - Sanity `typegen`
+  - Feed hydration
+  - Search hydration
+  - Type Safety w/ _zod_
+  - Write client
+  - User auth & profile
 
 - Bugs & Analytics
-    - Sentry integration
-    - PostHog integration
+
+  - Sentry integration
+  - PostHog integration
 
 - & 3, 2, 1... We have a liftoff 🚀🎉🎉
 

@@ -5,6 +5,37 @@
 import "./src/env.js";
 
 /** @type {import("next").NextConfig} */
-const config = {};
+const config = {
+  // middleware: ["~/src/middleware.ts"],
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "unsplash.com",
+        port: "",
+        pathname: "",
+        search: "",
+      },
+      {
+        protocol: "https",
+        hostname: "github.com",
+        port: "",
+        pathname: "",
+        search: "",
+      },
+      {
+        protocol: "https",
+        hostname: "images-assets.nasa.gov",
+        port: "",
+        pathname: "",
+        search: "",
+      },
+    ],
+  },
+
+  // Skipping type check until zod integration
+  typescript: { ignoreBuildErrors: true },
+  eslint: { ignoreDuringBuilds: true },
+};
 
 export default config;

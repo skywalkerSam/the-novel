@@ -2,16 +2,13 @@ import "~/styles/globals.css";
 
 import { type Metadata } from "next";
 import { Paprika } from "next/font/google";
-import { SpeedInsights } from "@vercel/speed-insights/next";
+// import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ThemeProvider } from "~/components/ui/theme-provider";
-import Footer from "./_components/Footer";
-import {
-  ClerkProvider,
-  SignedIn,
-  SignInButton,
-  SignedOut,
-} from "@clerk/nextjs";
-import NavBar from "./_components/NavBar";
+import Footer from "~/components/Footer";
+// import NavBar from "~/components/NavBar";
+
+// sanity-plugin-markdown
+// import "easymde/dist/easymde.min.css";
 
 // https://nextjs.org/learn/dashboard-app/adding-metadata
 export const metadata: Metadata = {
@@ -34,31 +31,21 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <ClerkProvider>
-      <html lang="en" suppressHydrationWarning>
-        <body className={`${paprika.className} antialiased`}>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <header className="flex h-16 items-center justify-end gap-4 p-4">
-              <SignedOut>
-                <div className="px-4 py-2 text-lg font-extrabold text-[var(--green)] hover:rounded-full hover:border-2 hover:border-b-[var(--green)] hover:text-[var(--green)]">
-                  <SignInButton />
-                </div>
-              </SignedOut>
-              <SignedIn>
-                <NavBar></NavBar>
-              </SignedIn>
-            </header>
-            <main>{children}</main>
-            <Footer></Footer>
-          </ThemeProvider>
-          <SpeedInsights></SpeedInsights>
-        </body>
-      </html>
-    </ClerkProvider>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${paprika.className} antialiased`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {/* <ClerkProvider> breaks /sanity-studio because Sanity brings it's own auth() */}
+          {/* <NavBar></NavBar> */}
+          <main>{children}</main>
+          <Footer></Footer>
+        </ThemeProvider>
+        {/* <SpeedInsights></SpeedInsights> */}
+      </body>
+    </html>
   );
 }

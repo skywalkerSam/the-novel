@@ -24,7 +24,7 @@ export default function SearchFormReset() {
     <button
       type="button"
       onClick={reset}
-      className="search-btn text-green-950"
+      className="search-btn"
       aria-label="Reset search parameters"
     >
       {/* reset() handles the path revalidation
