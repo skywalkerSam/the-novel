@@ -22,7 +22,10 @@ export const blogpost = defineType({
       options: {
         source: "title",
       },
-      validation: (Rule) => Rule.required().custom(s => (s?.current?.length ?? 0) <= 96 || "Max 96 chars"),
+      validation: (Rule) =>
+        Rule.required().custom(
+          (s) => (s?.current?.length ?? 0) <= 96 || "Max 96 chars",
+        ),
     }),
     defineField({
       name: "description",
@@ -51,10 +54,14 @@ export const blogpost = defineType({
     defineField({
       name: "views",
       type: "number",
+      initialValue: 0,
+      validation: (Rule) => Rule.min(0),
     }),
     defineField({
       name: "likes",
       type: "number",
+      initialValue: 0,
+      validation: (Rule) => Rule.min(0),
     }),
     // Comments
     // Bookmarks
