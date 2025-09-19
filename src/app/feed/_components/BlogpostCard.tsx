@@ -1,7 +1,7 @@
 import { cn, formatDate } from "~/lib/utils";
 import { EyeIcon } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
+// import Image from "next/image";
 import { Button } from "~/components/ui/button";
 import type { Author, Blogpost } from "sanity.types.ts";
 import { Skeleton } from "./Skeleton";
@@ -26,7 +26,7 @@ const BlogpostCard = ({ post }: { post: BlogpostCardType }) => {
   return (
     <li className="blogpost-card group">
       <div className="flex-between">
-        <p className="startup_card_date text-black">{formatDate(_createdAt)}</p>
+        <p className="blogpost-card_date text-black">{formatDate(_createdAt)}</p>
         <div className="flex gap-1.5">
           <EyeIcon className="size-6 text-black" />
           <span className="text-16-medium">{views}</span>
@@ -38,7 +38,7 @@ const BlogpostCard = ({ post }: { post: BlogpostCardType }) => {
           {/* <Link href={`/user/${author?._id}`}>
             <p className="text-16-medium line-clamp-1">{author?.name}</p>
           </Link> */}
-          <Link href={`/startup/${_id}`}>
+          <Link href={`/blogpost/${_id}`}>
             <h3 className="text-26-semibold text-primary">{title}</h3>{" "}
             {/* line-clamp-1 */}
           </Link>

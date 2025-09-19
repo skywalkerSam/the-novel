@@ -285,31 +285,31 @@
   }
 
   /* startupform */
-  .startup-form {
+  .blogpost-form {
     @apply mx-auto my-10 max-w-2xl space-y-8 bg-transparent px-6;
   }
 
-  .startup-form_label {
+  .blogpost-form_label {
     @apply text-[18px] font-bold text-black uppercase;
   }
 
-  .startup-form_input {
+  .blogpost-form_input {
     @apply mt-3 rounded-full border-[3px] border-[var(--green)] px-5 py-7 text-[18px] font-semibold text-black placeholder:text-black;
   }
 
-  .startup-form_textarea {
+  .blogpost-form_textarea {
     @apply mt-3 rounded-[20px] border-[3px] border-[var(--green)] p-5 text-[18px] font-semibold text-black placeholder:text-black;
   }
 
-  .startup-form_error {
+  .blogpost-form_error {
     @apply mt-2 ml-5 text-red-500;
   }
 
-  .startup-form_editor {
+  .blogpost-form_editor {
     @apply mt-3 border-[3px] border-[var(--green)] text-[18px] font-semibold text-black placeholder:text-black;
   }
 
-  .startup-form_btn {
+  .blogpost-form_btn {
     @apply bg-primary min-h-[70px] w-full rounded-full border-[4px] border-[var(--green)] p-5 text-[18px] font-bold;
   }
 
