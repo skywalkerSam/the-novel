@@ -1,5 +1,8 @@
+import Footer from "~/components/Footer";
+
 export default function HomePage() {
   return (
+    <>
     <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-transparent via-[var(--green)] to-transparent">
       <div className="container flex flex-col items-center justify-center">
         <p className="text-2xl font-extrabold tracking-tight md:text-[2rem] text-green-100">
@@ -16,5 +19,7 @@ export default function HomePage() {
         </h1>
       </div>
     </main>
+    <Footer></Footer>
+    </>
   );
 }

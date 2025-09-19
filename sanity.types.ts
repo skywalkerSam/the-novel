@@ -42,9 +42,9 @@ export type Blogpost = {
     _weak?: boolean;
     [internalGroqTypeReferenceTo]?: "author";
   };
-  title?: string;
-  slug?: Slug;
-  description?: string;
+  title: string;
+  slug: Slug;
+  description: string;
   image?: string;
   content?: string;
   category?: string;
@@ -211,8 +211,8 @@ export type BLOGPOSTS_QUERYResult = Array<{
   _type: "blogpost";
   _updatedAt: string;
   _rev: string;
-  title: string | null;
-  slug: Slug | null;
+  title: string;
+  slug: Slug;
   _createdAt: string;
   author: {
     _id: string;
@@ -221,7 +221,7 @@ export type BLOGPOSTS_QUERYResult = Array<{
     bio: string | null;
   } | null;
   views: number | null;
-  description: string | null;
+  description: string;
   category: string | null;
   image: string | null;
 }>;
@@ -247,8 +247,8 @@ export type SEARCH_QUERYResult = Array<
       _type: "blogpost";
       _updatedAt: string;
       _rev: string;
-      title: string | null;
-      slug: Slug | null;
+      title: string;
+      slug: Slug;
       _createdAt: string;
       author: {
         _id: string;
@@ -257,7 +257,7 @@ export type SEARCH_QUERYResult = Array<
         bio: string | null;
       } | null;
       views: number | null;
-      description: string | null;
+      description: string;
       category: string | null;
       image: string | null;
     }
@@ -305,11 +305,11 @@ export type SEARCH_QUERYResult = Array<
     }
 >;
 // Variable: BLOGPOST_BY_ID_QUERY
-// Query: *[_type == "blogpost" && _id == $id][0]{  _id,   title,   slug,  _createdAt,  author -> {    _id, name, username, image, bio  },   views,  description,  category,  image,  pitch,}
+// Query: *[_type == "blogpost" && _id == $id][0]{  _id,   title,   slug,  _createdAt,  author -> {    _id, name, username, image, bio  },   views,  description,  category,  image,  blogpost}
 export type BLOGPOST_BY_ID_QUERYResult = {
   _id: string;
-  title: string | null;
-  slug: Slug | null;
+  title: string;
+  slug: Slug;
   _createdAt: string;
   author: {
     _id: string;
@@ -319,10 +319,10 @@ export type BLOGPOST_BY_ID_QUERYResult = {
     bio: string | null;
   } | null;
   views: number | null;
-  description: string | null;
+  description: string;
   category: string | null;
   image: string | null;
-  pitch: null;
+  blogpost: null;
 } | null;
 // Variable: BLOGPOST_VIEWS_QUERY
 // Query: *[_type == "blogpost" && _id == $id][0]{        _id, views    }
@@ -356,8 +356,8 @@ export type AUTHOR_BY_ID_QUERYResult = {
 // Query: *[_type == "blogpost" && author._ref == $id] | order(_createdAt desc) {  _id,   title,   slug,  _createdAt,  author -> {    _id, name, image, bio  },   views,  description,  category,  image,}
 export type BLOGPOSTS_BY_AUTHOR_QUERYResult = Array<{
   _id: string;
-  title: string | null;
-  slug: Slug | null;
+  title: string;
+  slug: Slug;
   _createdAt: string;
   author: {
     _id: string;
@@ -366,12 +366,12 @@ export type BLOGPOSTS_BY_AUTHOR_QUERYResult = Array<{
     bio: string | null;
   } | null;
   views: number | null;
-  description: string | null;
+  description: string;
   category: string | null;
   image: string | null;
 }>;
 // Variable: FEED_BY_SLUG_QUERY
-// Query: *[_type == "feed" && slug.current == $slug][0]{  _id,  title,  slug,  select[]->{    _id,    _createdAt,    title,    slug,    author->{      _id,      name,      slug,      image,      bio    },    views,    description,    category,    image,    pitch  }}
+// Query: *[_type == "feed" && slug.current == $slug][0]{  _id,  title,  slug,  select[]->{    _id,    _createdAt,    title,    slug,    author->{      _id,      name,      slug,      image,      bio    },    views,    description,    category,    image,    blogpost  }}
 export type FEED_BY_SLUG_QUERYResult = {
   _id: string;
   title: string | null;
@@ -379,8 +379,8 @@ export type FEED_BY_SLUG_QUERYResult = {
   select: Array<{
     _id: string;
     _createdAt: string;
-    title: string | null;
-    slug: Slug | null;
+    title: string;
+    slug: Slug;
     author: {
       _id: string;
       name: string | null;
@@ -389,10 +389,10 @@ export type FEED_BY_SLUG_QUERYResult = {
       bio: string | null;
     } | null;
     views: number | null;
-    description: string | null;
+    description: string;
     category: string | null;
     image: string | null;
-    pitch: null;
+    blogpost: null;
   }> | null;
 } | null;
 
@@ -402,11 +402,11 @@ declare module "@sanity/client" {
   interface SanityQueries {
     '*[_type == "blogpost"] | order(_createdAt desc) {\n  _id, \n  _type,\n  _updatedAt,\n  _rev,\n  title, \n  slug,\n  _createdAt,\n  author -> {\n    _id, name, image, bio\n  }, \n  views,\n  description,\n  category,\n  image,\n}\n': BLOGPOSTS_QUERYResult;
     '*[_type == "blogpost" && defined(slug.current) && !defined($search) || title match $search || category match $search || author->name match $search] | order(_createdAt desc) {\n  _id, \n  _type,\n  _updatedAt,\n  _rev,\n  title, \n  slug,\n  _createdAt,\n  author -> {\n    _id, name, image, bio\n  }, \n  views,\n  description,\n  category,\n  image,\n}': SEARCH_QUERYResult;
-    '*[_type == "blogpost" && _id == $id][0]{\n  _id, \n  title, \n  slug,\n  _createdAt,\n  author -> {\n    _id, name, username, image, bio\n  }, \n  views,\n  description,\n  category,\n  image,\n  pitch,\n}': BLOGPOST_BY_ID_QUERYResult;
+    '*[_type == "blogpost" && _id == $id][0]{\n  _id, \n  title, \n  slug,\n  _createdAt,\n  author -> {\n    _id, name, username, image, bio\n  }, \n  views,\n  description,\n  category,\n  image,\n  blogpost\n}': BLOGPOST_BY_ID_QUERYResult;
     '\n    *[_type == "blogpost" && _id == $id][0]{\n        _id, views\n    }\n': BLOGPOST_VIEWS_QUERYResult;
     '\n*[_type == "author" && id == $id][0]{\n    _id,\n    id,\n    name,\n    username,\n    email,\n    image,\n    bio\n}\n': AUTHOR_BY_GITHUB_ID_QUERYResult;
     '\n*[_type == "author" && _id == $id][0]{\n    _id,\n    id,\n    name,\n    username,\n    email,\n    image,\n    bio\n}\n': AUTHOR_BY_ID_QUERYResult;
     '*[_type == "blogpost" && author._ref == $id] | order(_createdAt desc) {\n  _id, \n  title, \n  slug,\n  _createdAt,\n  author -> {\n    _id, name, image, bio\n  }, \n  views,\n  description,\n  category,\n  image,\n}': BLOGPOSTS_BY_AUTHOR_QUERYResult;
-    '*[_type == "feed" && slug.current == $slug][0]{\n  _id,\n  title,\n  slug,\n  select[]->{\n    _id,\n    _createdAt,\n    title,\n    slug,\n    author->{\n      _id,\n      name,\n      slug,\n      image,\n      bio\n    },\n    views,\n    description,\n    category,\n    image,\n    pitch\n  }\n}': FEED_BY_SLUG_QUERYResult;
+    '*[_type == "feed" && slug.current == $slug][0]{\n  _id,\n  title,\n  slug,\n  select[]->{\n    _id,\n    _createdAt,\n    title,\n    slug,\n    author->{\n      _id,\n      name,\n      slug,\n      image,\n      bio\n    },\n    views,\n    description,\n    category,\n    image,\n    blogpost\n  }\n}': FEED_BY_SLUG_QUERYResult;
   }
 }

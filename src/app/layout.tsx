@@ -4,7 +4,7 @@ import { type Metadata } from "next";
 import { Paprika } from "next/font/google";
 // import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ThemeProvider } from "~/components/ui/theme-provider";
-import Footer from "~/components/Footer";
+// import Footer from "~/components/Footer";
 // import NavBar from "~/components/NavBar";
 
 // sanity-plugin-markdown
@@ -42,7 +42,7 @@ export default function RootLayout({
           {/* <ClerkProvider> breaks /sanity-studio because Sanity brings it's own auth() */}
           {/* <NavBar></NavBar> */}
           <main>{children}</main>
-          <Footer></Footer>
+          {/* <Footer></Footer> */}
         </ThemeProvider>
         {/* <SpeedInsights></SpeedInsights> */}
       </body>

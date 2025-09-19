@@ -133,6 +133,12 @@
   }
 }
 
+@layer components {
+  main {
+    @apply min-h-screen;
+  }
+}
+
 /* unilities classes */
 @layer utilities {
   .green {
@@ -246,9 +252,9 @@
     @apply relative border-[5px] border-[var(--green)] bg-transparent py-4 font-medium text-black transition-all duration-500 hover:shadow-none;
   }
 
-  /* searchform */
+  /* search form */
   .search-form {
-    @apply flex min-h-[60px] w-full max-w-3xl flex-row items-center gap-5 rounded-full border-[2px] border-black bg-transparent px-5 text-lg font-light text-primary;
+    @apply text-primary flex min-h-[60px] w-full max-w-3xl flex-row items-center gap-5 rounded-full border-[2px] border-black bg-transparent px-5 text-lg font-light;
   }
 
   .search-input {
@@ -256,16 +262,16 @@
   }
 
   .search-btn {
-    @apply flex size-[45px] items-center justify-center rounded-full bg-[var(--green)] hover:bg-primary text-black;
+    @apply hover:bg-primary flex size-[45px] items-center justify-center rounded-full bg-[var(--green)] text-black;
   }
 
   /* BlogpostCard */
   .blogpost-card {
-    @apply border-[var(--green)] hover:border-primary rounded-4xl border-[2px] bg-transparent px-5 py-6 transition-all duration-500;
+    @apply hover:border-primary rounded-4xl border-[2px] border-[var(--green)] bg-transparent px-5 py-6 transition-all duration-500;
   }
 
   .blogpost-card_date {
-    @apply rounded-full px-4 py-2 text-[16px] text-black font-medium;
+    @apply rounded-full px-4 py-2 text-[16px] font-medium text-black;
   }
 
   .blogpost-card_desc {
@@ -313,7 +319,7 @@
     @apply bg-primary min-h-[70px] w-full rounded-full border-[4px] border-[var(--green)] p-5 text-[18px] font-bold;
   }
 
-  /* view */
+  /* views */
   .view-container {
     @apply fixed right-3 bottom-3 mt-5 flex items-center justify-end;
   }
