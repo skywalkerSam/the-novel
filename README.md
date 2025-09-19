@@ -3,7 +3,7 @@
         <img src="https://github.com/starboy-inc.png" alt="Starboy Logo" height=128>
     </a>
     <h1><a href="https://novel.skywalkersam.dev">The Novel Platform</a></h1>        
-    A Platform for Everything Poetic...
+    A Platform for Everything Poetic
 </div>
 
 &nbsp;
@@ -37,10 +37,10 @@
 
 - CMS integration w/ _Sanity_
 
-  - [x]Schema
-    - [x]Sanity `typegen`
-  - [x]Feed hydration
-  - [x]Search hydration
+  - [x] Schema
+    - [x] Sanity `typegen`
+  - [x] Feed hydration
+  - [x] Search hydration
   - Type Safety w/ _zod_
   - Write client
   - User auth & profile
@@ -59,6 +59,8 @@ Until Next Time...✌️
 &nbsp;
 
 ❤️
+
+&nbsp;
 
 <div align="center">
 <p>Built w/ <a href="https://nextjs.org">Next.js</a> + <a href="https://vercel.com">Vercel</a>.</p>
