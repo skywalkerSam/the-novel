@@ -50,7 +50,7 @@ export const BLOGPOST_BY_ID_QUERY =
   description,
   category,
   image,
-  pitch,
+  blogpost
 }`);
 
 export const BLOGPOST_VIEWS_QUERY = defineQuery(`
@@ -119,6 +119,6 @@ export const FEED_BY_SLUG_QUERY =
     description,
     category,
     image,
-    pitch
+    blogpost
   }
 }`);

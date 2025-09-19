@@ -26,10 +26,13 @@ const BlogpostCard = ({ post }: { post: BlogpostCardType }) => {
   return (
     <li className="blogpost-card group">
       <div className="flex-between">
-        <p className="blogpost-card_date text-black">{formatDate(_createdAt)}</p>
+        <p className="blogpost-card_date text-black">
+          {_createdAt ? formatDate(_createdAt) : "—"}
+        </p>
+        {/* <p className="blogpost-card_date text-black">{formatDate(_createdAt)}</p> */}
         <div className="flex gap-1.5">
           <EyeIcon className="size-6 text-black" />
-          <span className="text-16-medium">{views}</span>
+          <span className="text-16-medium">{views ?? 0}</span>
         </div>
       </div>
 

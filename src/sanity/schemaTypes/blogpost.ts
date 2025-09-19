@@ -13,6 +13,8 @@ export const blogpost = defineType({
     defineField({
       name: "title",
       type: "string",
+      validation: (Rule) =>
+        Rule.min(1).max(120).required().error("Please provide a good title"),
     }),
     defineField({
       name: "slug",
@@ -20,10 +22,16 @@ export const blogpost = defineType({
       options: {
         source: "title",
       },
+      validation: (Rule) => Rule.required().custom(s => (s?.current?.length ?? 0) <= 96 || "Max 96 chars"),
     }),
     defineField({
       name: "description",
       type: "text",
+      validation: (Rule) =>
+        Rule.min(3)
+          .max(300)
+          .required()
+          .error("Please provide a good description"),
     }),
     defineField({
       name: "image",
