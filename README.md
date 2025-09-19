@@ -38,9 +38,9 @@
 - CMS integration w/ _Sanity_
 
   - [x]Schema
-    - Sanity `typegen`
-  - Feed hydration
-  - Search hydration
+    - [x]Sanity `typegen`
+  - [x]Feed hydration
+  - [x]Search hydration
   - Type Safety w/ _zod_
   - Write client
   - User auth & profile
@@ -57,6 +57,8 @@
 Until Next Time...✌️
 
 &nbsp;
+
+❤️
 
 <div align="center">
 <p>Built w/ <a href="https://nextjs.org">Next.js</a> + <a href="https://vercel.com">Vercel</a>.</p>
