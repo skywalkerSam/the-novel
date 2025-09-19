@@ -41,14 +41,15 @@
     - [x] Sanity `typegen`
   - [x] Feed hydration
   - [x] Search hydration
-  - Type Safety w/ _zod_
-  - Write client
-  - User auth & profile
+  - [ ] Blogpost Content Page
+  - [ ] Type Safety w/ _zod_
+  - [ ] Write client
+  - [ ] User auth & profile
 
 - Bugs & Analytics
 
-  - Sentry integration
-  - PostHog integration
+  - [ ] Sentry integration
+  - [ ] PostHog integration
 
 - & 3, 2, 1... We have a liftoff 🚀🎉🎉
 
