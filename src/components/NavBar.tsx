@@ -1,3 +1,5 @@
+"use client";
+
 import { UserButton } from "@clerk/nextjs";
 import Link from "next/link";
 import {
@@ -13,8 +15,8 @@ export default function NavBar() {
       <SignedOut>
         <div className="justify-items-end">
           <div className="hover:text-primary p-4">
-          <SignInButton />
-        </div>
+            <SignInButton />
+          </div>
         </div>
       </SignedOut>
       <SignedIn>
