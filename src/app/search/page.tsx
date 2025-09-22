@@ -17,8 +17,8 @@ export default async function SearchPage({
   searchParams: Promise<{ query?: string | string[] }>;
 }) {
   const query = (await searchParams)?.query;
-  const params = { search: query ?? null };
   const searchQuery = Array.isArray(query) ? query[0] : query;
+  const params = { search: searchQuery ?? null };
   // const searchQuery = query?.[0] ?? query;
 
   const { data: posts } = await sanityFetch({ query: SEARCH_QUERY, params });
