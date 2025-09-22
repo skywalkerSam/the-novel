@@ -46,7 +46,17 @@ const BlogpostCard = ({ post }: { post: BlogpostCardType }) => {
             {/* line-clamp-1 */}
           </Link>
         </div>
-        <Link href={`/author/${author?._id}`}>
+        {author?._id ? (
+          <Link href={`/author/${author._id}`}>
+            <img
+              src={author?.image ?? "https://github.com/starboy-inc.png"}
+              alt={author?.name ?? "Author"}
+              width={48}
+              height={48}
+              className="rounded-full"
+            />
+          </Link>
+        ) : (
           <img
             src={author?.image ?? "https://github.com/starboy-inc.png"}
             alt={author?.name ?? "Author"}
@@ -54,7 +64,17 @@ const BlogpostCard = ({ post }: { post: BlogpostCardType }) => {
             height={48}
             className="rounded-full"
           />
-        </Link>
+        )}
+
+        {/* <Link href={`/author/${author?._id}`}>
+          <img
+            src={author?.image ?? "https://github.com/starboy-inc.png"}
+            alt={author?.name ?? "Author"}
+            width={48}
+            height={48}
+            className="rounded-full"
+          />
+        </Link> */}
       </div>
 
       <Link href={`/blogpost/${_id}`}>
@@ -68,9 +88,18 @@ const BlogpostCard = ({ post }: { post: BlogpostCardType }) => {
       </Link>
 
       <div className="flex-between mt-5 gap-3">
-        <Link href={`/?query=${category?.toLowerCase()}`}>
+        {category ? (
+          <Link href={`/search?query=${encodeURIComponent(category.toLowerCase())}`}>
+            <p className="text-16-medium">{category}</p>
+          </Link>
+        ) : (
+          <span className="text-16-medium text-muted-foreground">
+            Uncategorized
+          </span>
+        )}
+        {/* <Link href={`/?query=${category?.toLowerCase()}`}>
           <p className="text-16-medium">{category}</p>
-        </Link>
+        </Link> */}
         <Button className="blogpost-card_btn" asChild>
           <Link href={`/blogpost/${_id}`}>Details</Link>
         </Button>
