@@ -20,7 +20,7 @@ export const BLOGPOSTS_QUERY =
 `);
 
 export const SEARCH_QUERY =
-  defineQuery(`*[_type == "blogpost" && defined(slug.current) && !defined($search) || title match $search || category match $search || author->name match $search] | order(_createdAt desc) {
+  defineQuery(`*[_type == "blogpost" && defined(slug.current) && (!defined($search) || title match $search || category match $search || author->name match $search)] | order(_createdAt desc) {
   _id, 
   _type,
   _updatedAt,
