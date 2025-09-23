@@ -39,6 +39,17 @@ export default async function SearchPage({
             {/* {query ? `Search results for "${query}"` : ""} */}
           </div>
           <ul className="card_grid mt-7">
+            {posts?.length > 0 &&
+              posts.map((post) => <BlogpostCard key={post?._id} post={post} />)}
+          </ul>
+          {(!posts || posts.length === 0) && (
+            <div className="mt-6">
+              <p className="no-results text-3xl text-red-400/60">
+                No blogposts found .(
+              </p>
+            </div>
+          )}
+          {/* <ul className="card_grid mt-7">
             {posts?.length > 0 ? (
               posts.map((post) => <BlogpostCard key={post?._id} post={post} />)
             ) : (
@@ -46,7 +57,7 @@ export default async function SearchPage({
                 no blogposts found .(
               </p>
             )}
-          </ul>
+          </ul> */}
         </section>
       </main>
       <Footer></Footer>
