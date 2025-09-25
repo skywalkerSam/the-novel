@@ -23,9 +23,14 @@ export const author = defineType({
       name: "name",
       type: "string",
     }),
+    // defineField({
+    //   name: "image",
+    //   type: "url",
+    // }),
     defineField({
       name: "image",
-      type: "url",
+      type: "image",
+      options: { hotspot: true },
     }),
     defineField({
       name: "bio",
