@@ -3,7 +3,7 @@ import { EyeIcon } from "lucide-react";
 import Link from "next/link";
 // import Image from "next/image";
 import { Button } from "~/components/ui/button";
-import type { Author, Blogpost } from "sanity.types.ts";
+import type { Author, Blogpost } from "sanity.types";
 import { Skeleton } from "./Skeleton";
 
 export type BlogpostCardType = Omit<Blogpost, "author"> & {
@@ -47,7 +47,7 @@ const BlogpostCard = ({ post }: { post: BlogpostCardType }) => {
           </Link>
         </div>
         {author?._id ? (
-          <Link href={`/author/${author._id}`}>
+          <Link href={`/author/${author?._id}`}>
             <img
               src={author?.image ?? "https://github.com/starboy-inc.png"}
               alt={author?.name ?? "Author"}
@@ -58,8 +58,8 @@ const BlogpostCard = ({ post }: { post: BlogpostCardType }) => {
           </Link>
         ) : (
           <img
-            src={author?.image ?? "https://github.com/starboy-inc.png"}
-            alt={author?.name ?? "Author"}
+            src={"https://github.com/starboy-inc.png"}
+            alt={"Author image"}
             width={48}
             height={48}
             className="rounded-full"
