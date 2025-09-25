@@ -5,7 +5,8 @@ import { Paprika } from "next/font/google";
 // import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ThemeProvider } from "~/components/ui/theme-provider";
 // import Footer from "~/components/Footer";
-// import NavBar from "~/components/NavBar";
+import NavBar from "~/components/NavBar";
+import { ClerkProvider } from "@clerk/nextjs";
 
 // sanity-plugin-markdown
 // import "easymde/dist/easymde.min.css";
@@ -39,8 +40,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {/* <ClerkProvider> breaks /sanity-studio because Sanity brings it's own auth() */}
-          {/* <NavBar></NavBar> */}
+          <ClerkProvider>
+            {/* Avoid using `<ClerkProvider>` wrapper at the root of your layout, for _Sanity_ studio brings its own auth layer. */}
+            <NavBar></NavBar>
+          </ClerkProvider>
           <main>{children}</main>
           {/* <Footer></Footer> */}
         </ThemeProvider>

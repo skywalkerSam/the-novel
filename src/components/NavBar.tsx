@@ -2,16 +2,11 @@
 
 import { UserButton } from "@clerk/nextjs";
 import Link from "next/link";
-import {
-  ClerkProvider,
-  SignedIn,
-  SignInButton,
-  SignedOut,
-} from "@clerk/nextjs";
+import { SignedIn, SignInButton, SignedOut } from "@clerk/nextjs";
 
 export default function NavBar() {
   return (
-    <ClerkProvider>
+    <>
       <SignedOut>
         <div className="justify-items-end">
           <div className="hover:text-primary p-4">
@@ -73,6 +68,6 @@ export default function NavBar() {
           </div>
         </nav>
       </SignedIn>
-    </ClerkProvider>
+    </>
   );
 }
