@@ -49,7 +49,12 @@ const BlogpostCard = ({ post }: { post: BlogpostCardType }) => {
         {author?._id ? (
           <Link href={`/author/${author?._id}`}>
             <img
-              src={author?.image ?? "https://github.com/starboy-inc.png"}
+              src={
+                typeof author?.image === "string"
+                  ? author.image
+                  : "https://github.com/starboy-inc.png"
+              }
+              // src={author?.image ?? "https://github.com/starboy-inc.png"}
               alt={author?.name ?? "Author"}
               width={48}
               height={48}
@@ -89,7 +94,9 @@ const BlogpostCard = ({ post }: { post: BlogpostCardType }) => {
 
       <div className="flex-between mt-5 gap-3">
         {category ? (
-          <Link href={`/search?query=${encodeURIComponent(category.toLowerCase())}`}>
+          <Link
+            href={`/search?query=${encodeURIComponent(category.toLowerCase())}`}
+          >
             <p className="text-16-medium">{category}</p>
           </Link>
         ) : (
