@@ -29,7 +29,7 @@ export const SEARCH_QUERY =
   slug,
   _createdAt,
   author -> {
-    _id, name, image, bio
+    _id, name, username, image, bio
   }, 
   views,
   description,
@@ -90,7 +90,7 @@ export const BLOGPOSTS_BY_AUTHOR_QUERY =
   slug,
   _createdAt,
   author -> {
-    _id, name, image, bio
+    _id, name, username, image, bio
   }, 
   views,
   description,
