@@ -28,7 +28,20 @@ export function formatDate(input: string | Date) {
 //   });
 // }
 
-export function parseServerActionResponse<T>(response: T) {
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-  return JSON.parse(JSON.stringify(response));
+export function parseServerActionResponse<T>(response: T): T {
+  try {
+    if (typeof structuredClone === "function") return structuredClone(response);
+  } catch {
+    // ignore
+  }
+  try {
+    return JSON.parse(JSON.stringify(response)) as T;
+  } catch {
+    return response;
+  }
 }
+
+// export function parseServerActionResponse<T>(response: T) {
+//   // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+//   return JSON.parse(JSON.stringify(response));
+// }
