@@ -226,84 +226,26 @@ export type BLOGPOSTS_QUERYResult = Array<{
   image: string | null;
 }>;
 // Variable: SEARCH_QUERY
-// Query: *[_type == "blogpost" && defined(slug.current) && !defined($search) || title match $search || category match $search || author->name match $search] | order(_createdAt desc) {  _id,   _type,  _updatedAt,  _rev,  title,   slug,  _createdAt,  author -> {    _id, name, image, bio  },   views,  description,  category,  image,}
-export type SEARCH_QUERYResult = Array<
-  | {
-      _id: string;
-      _type: "author";
-      _updatedAt: string;
-      _rev: string;
-      title: null;
-      slug: null;
-      _createdAt: string;
-      author: null;
-      views: null;
-      description: null;
-      category: null;
-      image: string | null;
-    }
-  | {
-      _id: string;
-      _type: "blogpost";
-      _updatedAt: string;
-      _rev: string;
-      title: string;
-      slug: Slug;
-      _createdAt: string;
-      author: {
-        _id: string;
-        name: string | null;
-        image: string | null;
-        bio: string | null;
-      } | null;
-      views: number | null;
-      description: string;
-      category: string | null;
-      image: string | null;
-    }
-  | {
-      _id: string;
-      _type: "feed";
-      _updatedAt: string;
-      _rev: string;
-      title: string | null;
-      slug: Slug | null;
-      _createdAt: string;
-      author: null;
-      views: null;
-      description: null;
-      category: null;
-      image: null;
-    }
-  | {
-      _id: string;
-      _type: "sanity.fileAsset";
-      _updatedAt: string;
-      _rev: string;
-      title: string | null;
-      slug: null;
-      _createdAt: string;
-      author: null;
-      views: null;
-      description: string | null;
-      category: null;
-      image: null;
-    }
-  | {
-      _id: string;
-      _type: "sanity.imageAsset";
-      _updatedAt: string;
-      _rev: string;
-      title: string | null;
-      slug: null;
-      _createdAt: string;
-      author: null;
-      views: null;
-      description: string | null;
-      category: null;
-      image: null;
-    }
->;
+// Query: *[_type == "blogpost" && defined(slug.current) && (!defined($search) || title match $search || category match $search || author->name match $search)] | order(_createdAt desc) {  _id,   _type,  _updatedAt,  _rev,  title,   slug,  _createdAt,  author -> {    _id, name, image, bio  },   views,  description,  category,  image,}
+export type SEARCH_QUERYResult = Array<{
+  _id: string;
+  _type: "blogpost";
+  _updatedAt: string;
+  _rev: string;
+  title: string;
+  slug: Slug;
+  _createdAt: string;
+  author: {
+    _id: string;
+    name: string | null;
+    image: string | null;
+    bio: string | null;
+  } | null;
+  views: number | null;
+  description: string;
+  category: string | null;
+  image: string | null;
+}>;
 // Variable: BLOGPOST_BY_ID_QUERY
 // Query: *[_type == "blogpost" && _id == $id][0]{  _id,   title,   slug,  _createdAt,  author -> {    _id, name, username, image, bio  },   views,  description,  category,  image,  blogpost}
 export type BLOGPOST_BY_ID_QUERYResult = {
@@ -401,7 +343,7 @@ import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
     '*[_type == "blogpost"] | order(_createdAt desc) {\n  _id, \n  _type,\n  _updatedAt,\n  _rev,\n  title, \n  slug,\n  _createdAt,\n  author -> {\n    _id, name, image, bio\n  }, \n  views,\n  description,\n  category,\n  image,\n}\n': BLOGPOSTS_QUERYResult;
-    '*[_type == "blogpost" && defined(slug.current) && !defined($search) || title match $search || category match $search || author->name match $search] | order(_createdAt desc) {\n  _id, \n  _type,\n  _updatedAt,\n  _rev,\n  title, \n  slug,\n  _createdAt,\n  author -> {\n    _id, name, image, bio\n  }, \n  views,\n  description,\n  category,\n  image,\n}': SEARCH_QUERYResult;
+    '*[_type == "blogpost" && defined(slug.current) && (!defined($search) || title match $search || category match $search || author->name match $search)] | order(_createdAt desc) {\n  _id, \n  _type,\n  _updatedAt,\n  _rev,\n  title, \n  slug,\n  _createdAt,\n  author -> {\n    _id, name, image, bio\n  }, \n  views,\n  description,\n  category,\n  image,\n}': SEARCH_QUERYResult;
     '*[_type == "blogpost" && _id == $id][0]{\n  _id, \n  title, \n  slug,\n  _createdAt,\n  author -> {\n    _id, name, username, image, bio\n  }, \n  views,\n  description,\n  category,\n  image,\n  blogpost\n}': BLOGPOST_BY_ID_QUERYResult;
     '\n    *[_type == "blogpost" && _id == $id][0]{\n        _id, views\n    }\n': BLOGPOST_VIEWS_QUERYResult;
     '\n*[_type == "author" && id == $id][0]{\n    _id,\n    id,\n    name,\n    username,\n    email,\n    image,\n    bio\n}\n': AUTHOR_BY_GITHUB_ID_QUERYResult;
