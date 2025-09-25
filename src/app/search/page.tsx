@@ -1,7 +1,7 @@
 import SearchForm from "./_components/SearchForm";
 import { sanityFetch, SanityLive } from "~/sanity/lib/live";
 import { SEARCH_QUERY } from "~/sanity/lib/queries";
-import BlogpostCard from "../feed/_components/BlogpostCard";
+import BlogpostCard, { type BlogpostCardType } from "../feed/_components/BlogpostCard";
 import Footer from "~/components/Footer";
 
 // export default async function Search({
@@ -40,7 +40,7 @@ export default async function SearchPage({
           </div>
           <ul className="card_grid mt-7">
             {posts?.length > 0 &&
-              posts.map((post) => <BlogpostCard key={post?._id} post={post} />)}
+              posts.map((post: BlogpostCardType) => <BlogpostCard key={post?._id} post={post} />)}
           </ul>
           {(!posts || posts.length === 0) && (
             <div className="mt-6">

@@ -1,13 +1,13 @@
 import { BLOGPOSTS_QUERY } from "~/sanity/lib/queries";
-import BlogpostCard, {
-  type BlogpostCardType,
-} from "./_components/BlogpostCard";
-import { client } from "~/sanity/lib/client";
+import BlogpostCard, { type BlogpostCardType } from "./_components/BlogpostCard";
+// import { client } from "~/sanity/lib/client";
 import Footer from "~/components/Footer";
-// import { sanityFetch } from "~/sanity/lib/live";
+import { sanityFetch, SanityLive } from "~/sanity/lib/live";
 
 export default async function UserFeed() {
-  const posts = await client.fetch(BLOGPOSTS_QUERY);
+  const { data: posts } = await sanityFetch({ query: BLOGPOSTS_QUERY });
+
+  // const posts = await client.fetch(BLOGPOSTS_QUERY);
   // const posts = await sanityFetch({ query: BLOGPOSTS_QUERY });
 
   // console.log(JSON.stringify(posts, null, 2));
@@ -31,7 +31,9 @@ export default async function UserFeed() {
         <section className="section_container">
           <ul className="card_grid mt-7">
             {posts?.length > 0 ? (
-              posts.map((post) => <BlogpostCard key={post?._id} post={post} />)
+              posts.map((post: BlogpostCardType) => (
+                <BlogpostCard key={post?._id} post={post} />
+              ))
             ) : (
               <p className="no-results text-3xl text-red-400/60">
                 no blogposts found .(
@@ -41,6 +43,7 @@ export default async function UserFeed() {
         </section>
       </main>
       <Footer></Footer>
+      <SanityLive></SanityLive>
     </>
   );
 }
