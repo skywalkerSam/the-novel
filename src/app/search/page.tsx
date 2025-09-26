@@ -1,7 +1,9 @@
 import SearchForm from "./_components/SearchForm";
 import { sanityFetch, SanityLive } from "~/sanity/lib/live";
 import { SEARCH_QUERY } from "~/sanity/lib/queries";
-import BlogpostCard, { type BlogpostCardType } from "../feed/_components/BlogpostCard";
+import BlogpostCard, {
+  type BlogpostCardType,
+} from "../feed/_components/BlogpostCard";
 import Footer from "~/components/Footer";
 
 // export default async function Search({
@@ -31,16 +33,20 @@ export default async function SearchPage({
         </div>
         <section className="section_container">
           <div className="mt-10 mb-10">
-            {query
+            {searchQuery ? `Search results for "${searchQuery}"` : ""}
+            
+            {/* {query
               ? Array.isArray(query)
                 ? `Search results for "${query.join(", ")}"`
                 : `Search results for "${query}"`
-              : ""}
+              : ""} */}
             {/* {query ? `Search results for "${query}"` : ""} */}
           </div>
           <ul className="card_grid mt-7">
             {posts?.length > 0 &&
-              posts.map((post: BlogpostCardType) => <BlogpostCard key={post?._id} post={post} />)}
+              posts.map((post: BlogpostCardType) => (
+                <BlogpostCard key={post?._id} post={post} />
+              ))}
           </ul>
           {(!posts || posts.length === 0) && (
             <div className="mt-6">
