@@ -254,10 +254,10 @@
           "type": "string"
         }
       },
-      "id": {
+      "externalId": {
         "type": "objectAttribute",
         "value": {
-          "type": "number"
+          "type": "string"
         },
         "optional": true
       },
