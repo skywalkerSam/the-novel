@@ -18,3 +18,5 @@ function assertValue<T>(v: T | undefined, errorMessage: string): T {
 
   return v
 }
+
+export const token = process.env.SANITY_WRITE_TOKEN;

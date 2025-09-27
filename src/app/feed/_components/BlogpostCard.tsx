@@ -41,7 +41,7 @@ const BlogpostCard = ({ post }: { post: BlogpostCardType }) => {
           {/* <Link href={`/user/${author?._id}`}>
             <p className="text-16-medium line-clamp-1">{author?.name}</p>
           </Link> */}
-          <Link href={`/blogpost/${_id}`}>
+          <Link href={`/feed/blogpost/${_id}`}>
             <h3 className="text-26-semibold text-primary">{title}</h3>{" "}
             {/* line-clamp-1 */}
           </Link>
@@ -82,7 +82,7 @@ const BlogpostCard = ({ post }: { post: BlogpostCardType }) => {
         </Link> */}
       </div>
 
-      <Link href={`/blogpost/${_id}`}>
+      <Link href={`/feed/blogpost/${_id}`}>
         <p className="blogpost-card_desc">{description}</p>
 
         <img
@@ -108,7 +108,7 @@ const BlogpostCard = ({ post }: { post: BlogpostCardType }) => {
           <p className="text-16-medium">{category}</p>
         </Link> */}
         <Button className="blogpost-card_btn" asChild>
-          <Link href={`/blogpost/${_id}`}>Details</Link>
+          <Link href={`/feed/blogpost/${_id}`}>Details</Link>
         </Button>
       </div>
     </li>
