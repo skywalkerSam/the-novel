@@ -12,10 +12,10 @@ export default function SearchForm({ query }: { query?: string }) {
         placeholder="Search..."
       />
 
-      <div className="flex">
+      <div className="flex gap-1">
         {query && <SearchFormReset />}
 
-        <button type="submit" className="search-btn text-green-950">
+        <button type="submit" className="search-btn">
           <Search className="size-5" />
         </button>
       </div>

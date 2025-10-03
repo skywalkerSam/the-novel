@@ -1,11 +1,11 @@
 "use client";
 
-import NextLogo from "~/app/_components/NextLogo";
-import { ModeToggle } from "~/components/ui/theme-toggle";
+import NextLogo from "./NextLogo";
+import { ModeToggle } from "./ui/theme-toggle";
 
 export default function Footer() {
   return (
-    <div className="flex flex-row items-center justify-center justify-items-end py-12 text-[var(--green)]">
+    <div className="flex flex-row items-center justify-center justify-items-end py-12">
       <div className="mr-2">
         <ModeToggle></ModeToggle>
       </div>
@@ -20,7 +20,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear() + 10000},{" "}
             <a
               href="https://github.com/skywalkerSam"
-              className="hover:text-green-950"
+              className="hover:text-primary"
               target="_blank"
               rel="noopener noreferrer"
             >
