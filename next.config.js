@@ -32,6 +32,17 @@ const config = {
   // Skipping type check until zod integration
   typescript: { ignoreBuildErrors: true },
   eslint: { ignoreDuringBuilds: true },
+
+  // experimental: {
+  //   ppr: "incremental",
+  //   after: true,
+  // },
+
+  devIndicators: {
+    appIsrStatus: true,
+    buildActivity: true,
+    // buildActivityPosition: "bottom-right",
+  },
 };
 
 export default config;
