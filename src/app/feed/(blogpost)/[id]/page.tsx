@@ -17,7 +17,7 @@ import Link from "next/link";
 
 const md = markdownit();
 
-export const experimental_ppr = true;
+// export const experimental_ppr = true;
 
 export const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
   const id = (await params).id;
