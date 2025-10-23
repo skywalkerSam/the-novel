@@ -37,7 +37,7 @@ export const SEARCH_QUERY =
   image,
 }`);
 
-export const BLOGPOST_BY_SLUG_QUERY =
+export const PLAYLIST_BY_SLUG_QUERY =
   defineQuery(`*[_type == "feed" && slug.current == $slug][0]{
   _id,
   title,
@@ -50,7 +50,7 @@ export const BLOGPOST_BY_SLUG_QUERY =
     author->{
       _id,
       name,
-      username,
+      slug,
       image,
       bio
     },

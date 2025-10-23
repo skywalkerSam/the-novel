@@ -1,8 +1,8 @@
 import { Suspense } from "react";
 import { client } from "~/sanity/lib/client";
 import {
-  BLOGPOST_BY_SLUG_QUERY,
-  BLOGPOST_BY_ID_QUERY,
+  PLAYLIST_BY_SLUG_QUERY,
+  AUTHOR_BY_ID_QUERY,
 } from "~/sanity/lib/queries";
 import { notFound } from "next/navigation";
 import { formatDate } from "~/lib/utils";
@@ -22,23 +22,22 @@ const md = markdownit();
 export const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
   const id = (await params).id;
 
-  const post = await Promise.all([
-    client.fetch(BLOGPOST_BY_ID_QUERY, { id }),
-    // client.fetch(BLOGPOST_BY_SLUG_QUERY, {
-    //   slug: "",
-    // }),
-  ]);
-
-  // const [post, { select: editorPosts }] = await Promise.all([
-  //   client.fetch(BLOGPOST_BY_ID_QUERY, { id }),
-  //   client.fetch(BLOGPOST_BY_SLUG_QUERY, {
-  //     slug: "editor-picks-new",
+  // const [post, editorsPicks ] = await Promise.all([
+  //   client.fetch(AUTHOR_BY_ID_QUERY, { id }),
+  //   client.fetch(PLAYLIST_BY_SLUG_QUERY, {
+  //     slug: "editors-picks",
   //   }),
   // ]);
 
+  const post = await client.fetch(AUTHOR_BY_ID_QUERY, { id });
+
+  const editorsPicks = await client.fetch(PLAYLIST_BY_SLUG_QUERY, {
+    slug: "editors-picks",
+  });
+
   if (!post) return notFound();
 
-  const parsedContent = md.render(post?.pitch || "");
+  const parsedContent = md.render(post?.content ?? "");
 
   return (
     <>
@@ -71,14 +70,14 @@ export const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
               />
 
               <div>
-                <p className="text-20-medium">{post.author.name}</p>
+                <p className="text-20-medium">{post?.author.name}</p>
                 <p className="text-16-medium !text-black-300">
-                  @{post.author.username}
+                  @{post?.author.username}
                 </p>
               </div>
             </Link>
 
-            <p className="category-tag">{post.category}</p>
+            <p className="category-tag">{post?.category}</p>
           </div>
 
           <h3 className="text-30-bold">Pitch Details</h3>
@@ -94,7 +93,7 @@ export const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
 
         <hr className="divider" />
 
-        {posts?.length > 0 && (
+        {/* {posts?.length > 0 && (
           <div className="mx-auto max-w-4xl">
             <p className="text-30-semibold">Editor Picks</p>
 
@@ -104,19 +103,19 @@ export const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
               ))}
             </ul>
           </div>
-        )}
+        )} */}
 
-        {/* {editorPosts?.length > 0 && (
+        {editorsPicks?.length > 0 && (
           <div className="mx-auto max-w-4xl">
-            <p className="text-30-semibold">Editor Picks</p>
+            <p className="text-30-semibold">Editor&apos;s Picks...</p>
 
             <ul className="card_grid-sm mt-7">
-              {editorPosts.map((post: BlogpostCardType, i: number) => (
+              {editorsPicks.map((post: BlogpostCardType, i: number) => (
                 <BlogpostCard key={i} post={post} />
               ))}
             </ul>
           </div>
-        )} */}
+        )}
 
         <Suspense fallback={<Skeleton className="view_skeleton" />}>
           <View id={id} />
