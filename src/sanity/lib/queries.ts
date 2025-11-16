@@ -37,8 +37,24 @@ export const SEARCH_QUERY =
   image,
 }`);
 
+export const BLOGPOST_BY_ID_QUERY =
+  defineQuery(`*[_type == "blogpost" && _id == $id][0]{
+  _id, 
+  title, 
+  slug,
+  _createdAt,
+  author -> {
+    _id, name, username, image, bio
+  }, 
+  views,
+  description,
+  category,
+  image,
+  content
+}`);
+
 export const PLAYLIST_BY_SLUG_QUERY =
-  defineQuery(`*[_type == "feed" && slug.current == $slug][0]{
+  defineQuery(`*[_type == "playlist" && slug.current == $slug][0]{
   _id,
   title,
   slug,
@@ -60,22 +76,6 @@ export const PLAYLIST_BY_SLUG_QUERY =
     image,
     content
   }
-}`);
-
-export const BLOGPOST_BY_ID_QUERY =
-  defineQuery(`*[_type == "blogpost" && _id == $id][0]{
-  _id, 
-  title, 
-  slug,
-  _createdAt,
-  author -> {
-    _id, name, username, image, bio
-  }, 
-  views,
-  description,
-  category,
-  image,
-  content
 }`);
 
 export const BLOGPOST_VIEWS_QUERY = defineQuery(`

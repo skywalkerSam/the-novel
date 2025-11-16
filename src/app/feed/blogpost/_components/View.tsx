@@ -5,7 +5,7 @@ import { writeClient } from "~/sanity/lib/write-client";
 import { after } from "next/server";
 
 export const View = async ({ id }: { id: string }) => {
-  const { views: totalViews } = await client
+  const views = await client
     .withConfig({ useCdn: false })
     .fetch(BLOGPOST_VIEWS_QUERY, { id });
 
@@ -13,7 +13,8 @@ export const View = async ({ id }: { id: string }) => {
     async () =>
       await writeClient
         .patch(id)
-        .set({ views: totalViews + 1 })
+        .inc({views: 1})
+        // .set({ views: totalViews + 1 })
         .commit(),
   );
 
@@ -24,7 +25,7 @@ export const View = async ({ id }: { id: string }) => {
       </div>
 
       <p className="view-text">
-        <span className="font-black">Views: {totalViews}</span>
+        <span className="font-black">Views: {views}</span>
       </p>
     </div>
   );

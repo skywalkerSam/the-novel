@@ -299,7 +299,7 @@ export type SEARCH_QUERYResult = Array<{
   image: string | null;
 }>;
 // Variable: PLAYLIST_BY_SLUG_QUERY
-// Query: *[_type == "feed" && slug.current == $slug][0]{  _id,  title,  slug,  select[]->{    _id,    _createdAt,    title,    slug,    author->{      _id,      name,      slug,      image,      bio    },    views,    description,    category,    image,    content  }}
+// Query: *[_type == "playlist" && slug.current == $slug][0]{  _id,  title,  slug,  select[]->{    _id,    _createdAt,    title,    slug,    author->{      _id,      name,      slug,      image,      bio    },    views,    description,    category,    image,    content  }}
 export type PLAYLIST_BY_SLUG_QUERYResult = {
   _id: string;
   title: string | null;
@@ -452,7 +452,7 @@ declare module "@sanity/client" {
   interface SanityQueries {
     '*[_type == "blogpost"] | order(_createdAt desc) {\n  _id, \n  _type,\n  _updatedAt,\n  _rev,\n  title, \n  slug,\n  _createdAt,\n  author -> {\n    _id, name, image, bio\n  }, \n  views,\n  description,\n  category,\n  image,\n}\n': BLOGPOSTS_QUERYResult;
     '*[_type == "blogpost" && defined(slug.current) && (!defined($search) || title match $search || category match $search || author->name match $search)] | order(_createdAt desc) {\n  _id, \n  _type,\n  _updatedAt,\n  _rev,\n  title, \n  slug,\n  _createdAt,\n  author -> {\n    _id, name, username, image, bio\n  }, \n  views,\n  description,\n  category,\n  image,\n}': SEARCH_QUERYResult;
-    '*[_type == "feed" && slug.current == $slug][0]{\n  _id,\n  title,\n  slug,\n  select[]->{\n    _id,\n    _createdAt,\n    title,\n    slug,\n    author->{\n      _id,\n      name,\n      slug,\n      image,\n      bio\n    },\n    views,\n    description,\n    category,\n    image,\n    content\n  }\n}': PLAYLIST_BY_SLUG_QUERYResult;
+    '*[_type == "playlist" && slug.current == $slug][0]{\n  _id,\n  title,\n  slug,\n  select[]->{\n    _id,\n    _createdAt,\n    title,\n    slug,\n    author->{\n      _id,\n      name,\n      slug,\n      image,\n      bio\n    },\n    views,\n    description,\n    category,\n    image,\n    content\n  }\n}': PLAYLIST_BY_SLUG_QUERYResult;
     '*[_type == "blogpost" && _id == $id][0]{\n  _id, \n  title, \n  slug,\n  _createdAt,\n  author -> {\n    _id, name, username, image, bio\n  }, \n  views,\n  description,\n  category,\n  image,\n  content\n}': BLOGPOST_BY_ID_QUERYResult;
     '\n    *[_type == "blogpost" && _id == $id][0]{\n        _id, views\n    }\n': BLOGPOST_VIEWS_QUERYResult;
     '\n*[_type == "author" && id == $id][0]{\n    _id,\n    id,\n    name,\n    username,\n    email,\n    image,\n    bio\n}\n': AUTHOR_BY_GITHUB_ID_QUERYResult;
