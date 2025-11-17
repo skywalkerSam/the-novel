@@ -19,6 +19,7 @@
 
 - Next.js Crash Course by [JS Mastery](https://www.youtube.com/watch?v=Zq5fmkH0T78)
 - Sanity [`typegen`](https://www.sanity.io/docs/apis-and-sdks/sanity-typegen) Docs
+- [heroicons](https://heroicons.com/)
 - Markdown Parser; [markdown-it](https://github.com/markdown-it/markdown-it)
 
 &nbsp;
