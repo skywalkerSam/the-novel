@@ -53,6 +53,12 @@ export const BLOGPOST_BY_ID_QUERY =
   content
 }`);
 
+export const BLOGPOST_VIEWS_QUERY = defineQuery(`
+    *[_type == "blogpost" && _id == $id][0]{
+        _id, views
+    }
+`);
+
 export const PLAYLIST_BY_SLUG_QUERY =
   defineQuery(`*[_type == "playlist" && slug.current == $slug][0]{
   _id,
@@ -78,11 +84,6 @@ export const PLAYLIST_BY_SLUG_QUERY =
   }
 }`);
 
-export const BLOGPOST_VIEWS_QUERY = defineQuery(`
-    *[_type == "blogpost" && _id == $id][0]{
-        _id, views
-    }
-`);
 
 export const AUTHOR_BY_GITHUB_ID_QUERY = defineQuery(`
 *[_type == "author" && id == $id][0]{

@@ -6,6 +6,9 @@ import Footer from "~/components/Footer";
 import { formatDate } from "~/lib/utils";
 import { client } from "~/sanity/lib/client";
 import { BLOGPOST_BY_ID_QUERY } from "~/sanity/lib/queries";
+import TheEye from "../_components/TheEye";
+import { Suspense } from "react";
+import { Skeleton } from "../../_components/Skeleton";
 
 export default async function BlogpostPage({
   params,
@@ -21,7 +24,7 @@ export default async function BlogpostPage({
 
   return (
     <>
-      <section className="flex items-center justify-center p-4 md:p-8 lg:p-12 gap-4">
+      <section className="flex items-center justify-center gap-4 p-4 md:p-8 lg:p-12">
         <div>
           <h1 className="mt-6 mb-6 text-7xl font-semibold">{post?.title}</h1>
           <p className="ml-4">{post?.description}</p>
@@ -43,7 +46,7 @@ export default async function BlogpostPage({
               alt="Author image"
               width={60}
               height={60}
-              className="drop-shadow-black dark:drop-shadow-white rounded-full drop-shadow-lg"
+              className="rounded-full drop-shadow-lg drop-shadow-black dark:drop-shadow-white"
             />
           </Link>
           {/* <p>{post?.author?.name}</p> */}
@@ -67,10 +70,15 @@ export default async function BlogpostPage({
           <p>Blogpost coming soon...(</p>
         )}
       </section>
+      <div className="flex items-end justify-end px-8 py-8">
+        <Suspense fallback={<Skeleton className="view_skeleton"></Skeleton>}>
+          <TheEye id={id}></TheEye>
+        </Suspense>
+      </div>
+
       <div className="p-8">
         <h3 className="py-2 text-2xl font-semibold">Categories...</h3>
         {post?.category ? (
-          
           <Link
             href={`/search?query=${encodeURIComponent(post?.category.toLowerCase())}`}
           >
@@ -78,10 +86,10 @@ export default async function BlogpostPage({
               {post?.category}
             </p>
           </Link>
+        ) : (
           // <div className="px-4 py-2">
           //     <Button variant={"default"}>{post?.category}</Button>
           // </div>
-        ) : (
           <span>Uncategorized.(</span>
         )}
       </div>
