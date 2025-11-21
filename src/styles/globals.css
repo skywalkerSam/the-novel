@@ -290,6 +290,12 @@
     @apply h-96 w-full rounded-[22px] bg-zinc-400;
   }
 
+  /* BlogpostPage */
+
+  .blogpostpage-title {
+    @apply flex;
+  }
+
   /* blogpost form */
   .blogpost-form {
     @apply mx-auto my-10 max-w-2xl space-y-8 bg-transparent px-6;

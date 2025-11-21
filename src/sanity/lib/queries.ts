@@ -37,31 +37,6 @@ export const SEARCH_QUERY =
   image,
 }`);
 
-export const BLOGPOST_BY_SLUG_QUERY =
-  defineQuery(`*[_type == "feed" && slug.current == $slug][0]{
-  _id,
-  title,
-  slug,
-  select[]->{
-    _id,
-    _createdAt,
-    title,
-    slug,
-    author->{
-      _id,
-      name,
-      username,
-      image,
-      bio
-    },
-    views,
-    description,
-    category,
-    image,
-    content
-  }
-}`);
-
 export const BLOGPOST_BY_ID_QUERY =
   defineQuery(`*[_type == "blogpost" && _id == $id][0]{
   _id, 
@@ -83,6 +58,32 @@ export const BLOGPOST_VIEWS_QUERY = defineQuery(`
         _id, views
     }
 `);
+
+export const PLAYLIST_BY_SLUG_QUERY =
+  defineQuery(`*[_type == "playlist" && slug.current == $slug][0]{
+  _id,
+  title,
+  slug,
+  select[]->{
+    _id,
+    _createdAt,
+    title,
+    slug,
+    author->{
+      _id,
+      name,
+      slug,
+      image,
+      bio
+    },
+    views,
+    description,
+    category,
+    image,
+    content
+  }
+}`);
+
 
 export const AUTHOR_BY_GITHUB_ID_QUERY = defineQuery(`
 *[_type == "author" && id == $id][0]{

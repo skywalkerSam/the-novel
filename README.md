@@ -3,7 +3,7 @@
         <img src="https://github.com/starboy-inc.png" alt="Starboy Logo" height=128>
     </a>
     <h1><a href="https://novel.skywalkersam.dev">The Novel Platform</a></h1>        
-    A Platform for Everything Poetic
+    A Platform for Everything Poetic...
 </div>
 
 &nbsp;
@@ -17,9 +17,10 @@
 
 ## Sources
 
-- Next.js introduction - [YouTube](https://www.youtube.com/watch?v=Zq5fmkH0T78)
-- NavBar - [Flowbite](https://flowbite.com/docs/components/navbar/#user-menu-dropdown)
-- Sanity Docs - [typegen](https://www.sanity.io/docs/apis-and-sdks/sanity-typegen)
+- Next.js Crash Course by [JS Mastery](https://www.youtube.com/watch?v=Zq5fmkH0T78)
+- Sanity [`typegen`](https://www.sanity.io/docs/apis-and-sdks/sanity-typegen) Docs
+- [heroicons](https://heroicons.com/)
+- Markdown Parser; [markdown-it](https://github.com/markdown-it/markdown-it)
 
 &nbsp;
 
