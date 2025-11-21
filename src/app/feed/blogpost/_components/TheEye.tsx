@@ -1,10 +1,21 @@
+import { after } from "next/server";
 import { client } from "~/sanity/lib/client";
 import { BLOGPOST_VIEWS_QUERY } from "~/sanity/lib/queries";
+import { writeClient } from "~/sanity/lib/write-client";
 
 export default async function TheEye({ id }: { id: string }) {
   const views = await client
     .withConfig({ useCdn: false })
     .fetch(BLOGPOST_VIEWS_QUERY, { id });
+
+  after(
+      async () =>
+        await writeClient
+          .patch(id)
+          .inc({views: 1})
+          // .set({ views: totalViews + 1 })
+          .commit(),
+    );
 
   return (
     <div className="flex-inline flex gap-1">

@@ -2,13 +2,14 @@ import MarkdownIt from "markdown-it";
 import Image from "next/image";
 import Link from "next/link";
 import Footer from "~/components/Footer";
-// import { Button } from "~/components/ui/button";
 import { formatDate } from "~/lib/utils";
 import { client } from "~/sanity/lib/client";
 import { BLOGPOST_BY_ID_QUERY } from "~/sanity/lib/queries";
 import TheEye from "../_components/TheEye";
-import { Suspense } from "react";
-import { Skeleton } from "../../_components/Skeleton";
+// import { Suspense } from "react";
+// import { Skeleton } from "../../_components/Skeleton";
+// import { Button } from "~/components/ui/button";
+// import { useRouter } from "next/router";
 
 export default async function BlogpostPage({
   params,
@@ -21,6 +22,8 @@ export default async function BlogpostPage({
 
   const md = MarkdownIt();
   const parsedContent = md.render(post?.content ?? "");
+
+  // const router = useRouter();
 
   return (
     <>
@@ -39,19 +42,32 @@ export default async function BlogpostPage({
       </section>
       <section className="p-4 md:p-8 lg:p-12">
         {/* <Image src={post?.author?.image?.asset?._ref ?? ""} alt="Author image" width={60} height={60}/> */}
-        <div className="flex-inline flex">
-          <Link href={`/user/${post?.author?._id}`}>
-            <Image
-              src={post?.author?.image ?? ""}
-              alt="Author image"
-              width={60}
-              height={60}
-              className="rounded-full drop-shadow-lg drop-shadow-black dark:drop-shadow-white"
-            />
-          </Link>
+        <div className="flex-between flex">
+          <div className="w-12 flex-none">
+            <Link href={`/user/${post?.author?._id}`}>
+              <Image
+                src={post?.author?.image ?? ""}
+                alt="Author image"
+                width={60}
+                height={60}
+                className="rounded-full drop-shadow-lg drop-shadow-black dark:drop-shadow-white"
+              />
+            </Link>
+          </div>
+          <div className="w-36 flex-none">
+            <Link href={`/user/${post?.author?._id}`}>
+              <div className="mt-4 ml-2 hover:text-[var(--green)]">
+                <p>
+                  <span>@</span>
+                  {post?.author?.username ?? ""}
+                </p>
+              </div>
+            </Link>
+          </div>
+
           {/* <p>{post?.author?.name}</p> */}
           {/* Check for undefined to avoid TSBS.) */}
-          <div className="mt-4 ml-4">
+          <div className="mt-4 ml-4 flex flex-1 items-end justify-end">
             <p>
               <span className="mr-1 font-bold">•</span>
               {post?._createdAt && formatDate(post?._createdAt)}
@@ -70,29 +86,38 @@ export default async function BlogpostPage({
           <p>Blogpost coming soon...(</p>
         )}
       </section>
-      <div className="flex items-end justify-end px-8 py-8">
-        <Suspense fallback={<Skeleton className="view_skeleton"></Skeleton>}>
-          <TheEye id={id}></TheEye>
-        </Suspense>
-      </div>
 
-      <div className="p-8">
-        <h3 className="py-2 text-2xl font-semibold">Categories...</h3>
+      <div className="flex-between p-4">
+        {/* <p className="py-2 text-2xl font-semibold">Categories...</p> */}
         {post?.category ? (
           <Link
             href={`/search?query=${encodeURIComponent(post?.category.toLowerCase())}`}
           >
-            <p className="px-4 py-4 text-[16px] font-semibold hover:text-[var(--green)] hover:underline">
+            <p className="border-accent-foreground hover:border-accent-[var(--green)] rounded-full border-2 p-2 font-semibold hover:text-[var(--green)] hover:underline">
               {post?.category}
             </p>
           </Link>
         ) : (
-          // <div className="px-4 py-2">
-          //     <Button variant={"default"}>{post?.category}</Button>
-          // </div>
-          <span>Uncategorized.(</span>
+          // <Button
+          //   variant={"default"}
+          //   className="rounded-full"
+          //   onClick={() =>
+          //     router.push(
+          //       `/search?query=${encodeURIComponent(post?.category?.toLowerCase() ?? "")}`,
+          //     )
+          //   }
+          // >
+          //   {post?.category}
+          // </Button>
+          <p>Uncategorized.(</p>
         )}
+        <TheEye id={id}></TheEye>
+
+        {/* <Suspense fallback={<Skeleton className="view_skeleton"></Skeleton>}>
+          <TheEye id={id}></TheEye>
+        </Suspense> */}
       </div>
+
       <Footer></Footer>
     </>
   );
