@@ -37,27 +37,31 @@ export default async function BlogpostPage({
           <h1 className="mt-6 mb-6 text-7xl font-semibold">{post?.title}</h1>
           <p className="ml-4">{post?.description}</p>
         </div>
-        <Image
-          src={post?.image}
-          alt="Cover image"
-          width={900}
-          height={600}
-          className="rounded-lg"
-        ></Image>
+        {post?.image && (
+          <Image
+            src={post?.image}
+            alt="Cover image"
+            width={900}
+            height={600}
+            className="rounded-lg"
+          ></Image>
+        )}
       </section>
       <section className="p-4 md:p-8 lg:p-12">
         {/* <Image src={post?.author?.image?.asset?._ref ?? ""} alt="Author image" width={60} height={60}/> */}
         <div className="flex-between flex">
           <div className="w-12 flex-none">
-            <Link href={`/user/${post?.author?._id}`}>
-              <Image
-                src={post?.author?.image ?? ""}
-                alt="Author image"
-                width={60}
-                height={60}
-                className="rounded-full drop-shadow-lg drop-shadow-black dark:drop-shadow-white"
-              />
-            </Link>
+            {post?.author?.image && (
+              <Link href={`/user/${post?.author?._id}`}>
+                <Image
+                  src={post?.author?.image}
+                  alt="Author image"
+                  width={60}
+                  height={60}
+                  className="rounded-full drop-shadow-lg drop-shadow-black dark:drop-shadow-white"
+                />
+              </Link>
+            )}
           </div>
           <div className="w-36 flex-none">
             <Link href={`/user/${post?.author?._id}`}>
