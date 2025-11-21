@@ -23,6 +23,7 @@ export const createPitch = async (
   );
 
   const slug = slugify(title as string, { lower: true, strict: true });
+  // const slug = slugify(title, { lower: true, strict: true });
 
   try {
     const startup = {
@@ -31,7 +32,7 @@ export const createPitch = async (
       category,
       image: link,
       slug: {
-        _type: slug,
+        _type: "slug",
         current: slug,
       },
       author: {
@@ -52,7 +53,8 @@ export const createPitch = async (
     console.log(error);
 
     return parseServerActionResponse({
-      error: JSON.stringify(error),
+      // error: JSON.stringify(error),
+      error: error instanceof Error ? error.message : "An error occurred.(",
       status: "ERROR",
     });
   }
