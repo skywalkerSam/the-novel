@@ -52,7 +52,8 @@ export default async function BlogpostPage({
         <div className="flex-between flex">
           <div className="w-12 flex-none">
             {post?.author?.image && (
-              <Link href={`/user/${post?.author?._id}`}>
+              <Link href={`/feed}`}>
+                {/*<Link href={`/user/${post?.author?._id}`}>*/}
                 <Image
                   src={post?.author?.image}
                   alt="Author image"

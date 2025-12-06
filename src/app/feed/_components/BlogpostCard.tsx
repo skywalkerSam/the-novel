@@ -67,7 +67,8 @@ const BlogpostCard = ({ post }: { post: BlogpostCardType }) => {
           </Link>
         </div>
         {author?._id ? (
-          <Link href={`/author/${author?._id}`}>
+            <Link href={`/feed}`}>
+            {/*<Link href={`/author/${author?._id}`}>*/}
             <img
               src={
                 typeof author?.image === "string"
